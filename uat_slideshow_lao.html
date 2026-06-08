@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TVET Platform Prototype UAT Slideshow (Lao Version)</title>
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Lao:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    :root {
+      --font-title: 'Outfit', 'Noto Sans Lao', 'Inter', sans-serif;
+      --font-body: 'Noto Sans Lao', 'Inter', sans-serif;
+      
+      /* Pure Minimal Light Theme */
+      --bg-body: #f1f5f9; /* Soft Studio Light Gray */
+      --bg-slide: #ffffff;
+      --border-color: #cbd5e1;
+      
+      --color-primary: #0f172a; /* Slate 900 */
+      --color-accent: #2563eb; /* Royal Blue */
+      --color-success: #16a34a; /* Green */
+      --color-warning: #ca8a04; /* Yellow */
+      --color-danger: #dc2626; /* Red */
+      --color-text-main: #1e293b; /* Slate 800 */
+      --color-text-muted: #475569; /* Slate 600 */
+      
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-body);
+      color: var(--color-text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #e2e8f0;
+      z-index: 100;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--color-accent);
+      transition: width var(--transition-speed) ease;
+    }
+
+    /* Top bar / Navbar - clean and minimal */
+    .top-navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      z-index: 90;
+      background: transparent;
+      border-bottom: none;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      font-size: 1.6rem;
+      color: var(--color-primary);
+    }
+
+    .logo-text {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      color: var(--color-primary);
+    }
+
+    .logo-badge {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .index-dropdown {
+      position: relative;
+    }
+
+    .btn-index {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .btn-index:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      width: 300px;
+      padding: 8px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      display: none;
+      z-index: 110;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      background: transparent;
+      color: var(--color-text-muted);
+      text-align: left;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dropdown-item:hover {
+      background: #f1f5f9;
+      color: var(--color-primary);
+    }
+
+    .dropdown-item.active {
+      background: #eff6ff;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    .settings-menu {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      width: 320px;
+      padding: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      display: none;
+      z-index: 110;
+      text-align: left;
+    }
+
+    .settings-menu.show {
+      display: block;
+    }
+
+    /* Main Content Slides Container */
+    .slides-container {
+      flex: 1;
+      position: relative;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Widescreen 16:9 Presentation Slide Card */
+    .slide {
+      position: absolute;
+      width: 96%;
+      max-width: 1700px;
+      height: 78vh;
+      min-height: 600px;
+      max-height: 850px;
+      aspect-ratio: 16 / 9;
+      opacity: 0;
+      transform: scale(0.96);
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 24px;
+      background: var(--bg-slide);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px 40px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+      box-sizing: border-box;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+      position: relative;
+    }
+
+    /* Split-screen layout */
+    .slide.split-screen {
+      display: grid;
+      grid-template-columns: 0.7fr 1.7fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .slide-left-pane {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 16px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .slide-right-pane {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      min-height: 0;
+    }
+
+    /* Slide Title Group & Focus Point */
+    .slide-title-group {
+      border-left: 5px solid var(--color-accent);
+      padding-left: 16px;
+      margin-bottom: 5px;
+    }
+
+    .slide-subtitle {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: var(--color-accent);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .slide-title {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--color-primary);
+    }
+
+    /* Minimal Cards */
+    .card-glass {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    /* Title Slide Specifics */
+    .intro-slide {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      gap: 28px !important;
+    }
+
+    .intro-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: var(--color-accent);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .intro-title {
+      font-family: var(--font-title);
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--color-primary);
+      margin: 8px 0;
+      letter-spacing: -1px;
+    }
+
+    .intro-accent-title {
+      color: var(--color-accent);
+    }
+
+    .intro-desc {
+      color: var(--color-text-muted);
+      font-size: 1.25rem;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .intro-meta {
+      display: flex;
+      gap: 32px;
+      margin-top: 16px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .meta-item i {
+      color: var(--color-accent);
+      font-size: 1.1rem;
+    }
+
+    /* Flex Grids and Helpers */
+    .d-flex { display: flex; }
+    .flex-column { flex-direction: column; }
+    .justify-content-between { justify-content: space-between; }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .grid-3col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Highlight box / Alerts */
+    .alert-box {
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+    }
+
+    .alert-box-info {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+    }
+
+    .alert-box-warning {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+    }
+
+    .alert-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .alert-box-info .alert-icon { color: var(--color-accent); }
+    .alert-box-warning .alert-icon { color: var(--color-warning); }
+
+    .alert-content h4 {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--color-primary);
+    }
+
+    .alert-content p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--color-text-main);
+    }
+
+    /* Checklists and list elements with focus spacing */
+    ul.check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    ul.check-list li {
+      position: relative;
+      padding-left: 28px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--color-text-main);
+    }
+
+    ul.check-list li::before {
+      content: "\F272"; /* Bootstrap Icon: bi-check-circle-fill */
+      font-family: "bootstrap-icons";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--color-success);
+      font-size: 1.1rem;
+    }
+
+    /* Table styling for checklists - Clean and Big */
+    .table-wrapper {
+      flex: 1;
+      max-height: 380px;
+      overflow-y: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+    }
+
+    .table-spec {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .table-spec th, .table-spec td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .table-spec th {
+      background: #f8fafc;
+      border-bottom: 2.5px solid #cbd5e1;
+      font-family: var(--font-title);
+      font-weight: 700;
+      color: var(--color-primary);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .table-spec tr:hover td {
+      background: #f8fafc;
+    }
+
+    .table-spec td {
+      color: var(--color-text-main);
+      line-height: 1.4;
+    }
+
+    .table-spec code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .badge-role {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-role-mobile { background: #faf5ff; border: 1px solid #e9d5ff; color: #6b21a8; }
+    .badge-role-portal { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+    .badge-role-bo { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+
+    /* Visual Roles Cards - Interactive and structured */
+    .role-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      height: 100%;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .role-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -10px rgba(37, 99, 235, 0.12);
+    }
+
+    .role-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .role-icon {
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      width: 38px;
+      height: 38px;
+      background: #f1f5f9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .role-name {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--color-primary);
+    }
+
+    .role-app-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    .role-file-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Bottom Navigation / Slide Controller */
+    .bottom-controllers {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      border-top: none;
+      background: transparent;
+      z-index: 90;
+    }
+
+    .slide-numbers {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      font-weight: 700;
+      font-family: var(--font-title);
+    }
+
+    .btn-nav-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-nav {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .btn-nav:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .btn-nav-primary {
+      background: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .btn-nav-primary:hover:not(:disabled) {
+      background: #1e293b;
+      border-color: #1e293b;
+      color: #ffffff;
+    }
+
+    /* Live Interactive Devices Mockups */
+    .device-mockup {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .device-mockup.phone {
+      width: 320px;
+      height: 100%;
+      max-height: 480px;
+      border: 10px solid #0f172a; /* Sleek black phone bezel */
+      border-radius: 36px;
+      box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+    }
+
+    .device-mockup.phone .device-header {
+      height: 24px;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: none;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .device-mockup.phone .phone-speaker {
+      width: 50px;
+      height: 4px;
+      background: #334155;
+      border-radius: 2px;
+    }
+
+    .device-mockup.browser {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+    }
+
+    .device-mockup.browser .device-header {
+      height: 38px;
+      background: #f1f5f9;
+      border-bottom: 1px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .device-dot-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .device-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .device-dot.red { background: #ef4444; }
+    .device-dot.yellow { background: #f59e0b; }
+    .device-dot.green { background: #10b981; }
+
+    .device-address {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      height: 24px;
+      font-size: 0.75rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      font-family: monospace;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: left;
+    }
+
+    .device-body {
+      flex: 1;
+      background: #ffffff;
+      position: relative;
+      min-height: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .device-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #ffffff;
+    }
+
+
+    /* Scenario Selector Styles */
+    .scenario-selector-card {
+      margin-top: 15px;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+    }
+    .scenario-selector-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .scenario-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .btn-scenario {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-body);
+      text-align: left;
+    }
+    .btn-scenario:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .btn-scenario.active {
+      background: var(--color-accent);
+      color: #ffffff;
+      border-color: var(--color-accent);
+    }
+
+
+    .device-refresh-btn {
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #64748b; /* Slate 500 */
+      transition: all 0.15s ease;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .device-refresh-btn:hover {
+      background: #e2e8f0;
+      color: var(--color-primary) !important;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Progress Bar at Top -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Top Navigation bar -->
+                      <div class="top-navbar">
+    <div class="logo-section">
+      <i class="bi bi-display logo-icon"></i>
+      <span class="logo-text">SkillsLao TVET</span>
+      <span class="logo-badge">UAT Prototype Deck</span>
+    </div>
+    <div class="index-dropdown" style="display: flex; gap: 12px; align-items: center;">
+      <!-- settings button -->
+      <button class="btn-index" id="btnSettings" onclick="toggleSettings(event)" style="background:#ffffff; border-color:#cbd5e1;">
+        <i class="bi bi-gear-fill"></i> ຕັ້ງຄ່າລະບົບຈຳລອງ
+      </button>
+      <button class="btn-index" onclick="toggleDropdown(event)">
+        <i class="bi bi-list-nested"></i> ສາລະບານສະໄລ້ <i class="bi bi-chevron-down" style="font-size:0.75rem;"></i>
+      </button>
+      
+      <!-- Settings dropdown menu -->
+      <div class="settings-menu" id="settingsMenu">
+        <h4 style="font-family:var(--font-title); margin-bottom:12px; font-size:1rem; border-bottom:1px solid #e2e8f0; padding-bottom:6px; font-weight:700;">ຕັ້ງຄ່າລະບົບ UAT</h4>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:0.8rem; font-weight:700; display:block; margin-bottom:4px; color:var(--color-text-main);">ລະບົບຜູ້ຮຽນ (Learner Portal)</label>
+          <input type="text" id="inputLearnerUrl" value="https://learner-portal.tvete-learning.info" style="width:100%; padding:6px 10px; border-radius:6px; border:1px solid #cbd5e1; font-size:0.85rem; font-family:monospace;">
+        </div>
+        <div style="margin-bottom:16px;">
+          <label style="font-size:0.8rem; font-weight:700; display:block; margin-bottom:4px; color:var(--color-text-main);">ລະບົບຫຼັງບ້ານ (Backoffice Portal)</label>
+          <input type="text" id="inputBackofficeUrl" value="https://backoffice-portal.tvete-learning.info" style="width:100%; padding:6px 10px; border-radius:6px; border:1px solid #cbd5e1; font-size:0.85rem; font-family:monospace;">
+        </div>
+        <button class="btn-nav btn-nav-primary" onclick="saveSettings()" style="width:100%; justify-content:center; padding:8px 0; font-size:0.9rem; border-radius:6px;">ບັນທຶກການຕັ້ງຄ່າ</button>
+      </div>
+
+                  <!-- Slides list dropdown menu -->
+      <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-item" onclick="goToSlide(0)">1. ໜ້າທຳອິດນຳສະເໜີ UAT</button>
+        <button class="dropdown-item" onclick="goToSlide(1)">2. ວັດຖຸປະສົງການທົດສອບ</button>
+        <button class="dropdown-item" onclick="goToSlide(2)">3. ພາບລວມລະບົບ & ບົດບາດ</button>
+        <button class="dropdown-item" onclick="goToSlide(3)">4. ກົດກະຕິກາ & Harness Bar</button>
+        <button class="dropdown-item" onclick="goToSlide(4)">5. ວິທີບັນທຶກຜົນລົງ Excel</button>
+        <button class="dropdown-item" onclick="goToSlide(5)">6. ເຄສຜູ້ຮຽນ 1: ສະໝັກສະມາຊິກ</button>
+        <button class="dropdown-item" onclick="goToSlide(6)">7. ເຄສຜູ້ຮຽນ 2: ເຂົ້າໃຊ້ ແລະ ຕັ້ງ PIN</button>
+        <button class="dropdown-item" onclick="goToSlide(7)">8. ເຄສຜູ້ຮຽນ 3: ຄົ້ນຫາຫຼັກສູດ</button>
+        <button class="dropdown-item" onclick="goToSlide(8)">9. ເຄສຜູ້ຮຽນ 4: ເລີ່ມຮຽນ & ບັນທຶກຜົນ</button>
+        <button class="dropdown-item" onclick="goToSlide(9)">10. ເຄສຜູ້ຮຽນ 5: ເຮັດຄຳຖາມທົດສອບ</button>
+        <button class="dropdown-item" onclick="goToSlide(10)">11. ເຄສຜູ້ຮຽນ 6: ຊຳລະຄ່າທຳນຽມ</button>
+        <button class="dropdown-item" onclick="goToSlide(11)">12. ເຄສຜູ້ສອນ 1: ສ້າງບົດຮຽນ ແລະ ຫຼັກສູດ</button>
+        <button class="dropdown-item" onclick="goToSlide(12)">13. ເຄສຜູ້ສອນ 2: ສ້າງແບບທົດສອບຄຳຖາມ</button>
+        <button class="dropdown-item" onclick="goToSlide(13)">14. ເຄສຜູ້ສອນ 3: ຍື່ນຂໍອະນຸມັດເຜີຍແຜ່</button>
+        <button class="dropdown-item" onclick="goToSlide(14)">15. ເຄສຜູ້ສອນ 4: ແດຊບອດຜູ້ຮຽນ</button>
+        <button class="dropdown-item" onclick="goToSlide(15)">16. ເຄສຜູ້ສອນ 5: ກວດ ແລະ ປະເມີນວຽກກາຣບ້ານ</button>
+        <button class="dropdown-item" onclick="goToSlide(16)">17. ເຄສຜູ້ສອນ 6: ຈັດການກຸ່ມຊັ້ນຮຽນ</button>
+        <button class="dropdown-item" onclick="goToSlide(17)">18. ເຄສແອດມິນສະຖາບັນ 1: ນຳເຂົ້າລາຍຊື່ນັກຮຽນ</button>
+        <button class="dropdown-item" onclick="goToSlide(18)">19. ເຄສແອດມິນສະຖາບັນ 2: ເຊີນບັນຊີຄູຜູ້ສອນ</button>
+        <button class="dropdown-item" onclick="goToSlide(19)">20. ເຄສແອດມິນສະຖາບັນ 3: ກວດສອບ & ອະນຸມັດຄອສ</button>
+        <button class="dropdown-item" onclick="goToSlide(20)">21. ເຄສແອດມິນສະຖາບັນ 4: ຕັ້ງລາຄາ & ໂໝດຮຽນ</button>
+        <button class="dropdown-item" onclick="goToSlide(21)">22. ເຄສແອດມິນສະຖາບັນ 5: ສົ່ງອອກລາຍງານການເງິນ</button>
+        <button class="dropdown-item" onclick="goToSlide(22)">23. ເຄສແອດມິນສະຖາບັນ 6: ສັງລວມລາຍງານສະຖາບັນ</button>
+        <button class="dropdown-item" onclick="goToSlide(23)">24. ເຄສແອດມິນລະບົບ 1: ຕັ້ງຄ່າລະບົບຫຼັກ</button>
+        <button class="dropdown-item" onclick="goToSlide(24)">25. ເຄສແອດມິນລະບົບ 2: ຈັດການບັນຊີແອດມິນສະຖາບັນ</button>
+        <button class="dropdown-item" onclick="goToSlide(25)">26. ເຄສແອດມິນລະບົບ 3: ກວດສອບບັນທຶກຄວາມປອດໄພ</button>
+        <button class="dropdown-item" onclick="goToSlide(26)">27. ເຄສແອດມິນລະບົບ 4: ກວດສອບລາຍງານການແຈ້ງເຕືອນ</button>
+        <button class="dropdown-item" onclick="goToSlide(27)">28. ເຄສແອດມິນລະບົບ 5: ຈັດການສະຖາບັນ ແລະ ຂໍ້ມູນພື້ນຖານ</button>
+        <button class="dropdown-item" onclick="goToSlide(28)">29. ການສະຫຼຸບຜົນ UAT</button>
+      </div>
+    </div>
+  </div>
+      <!-- Slides Main Container -->
+  <div class="slides-container">
+    <!-- Slide 1: Welcome / Intro -->
+    <div class="slide active intro-slide">
+      <span class="intro-badge">
+        <i class="bi bi-rocket-takeoff-fill"></i> User Acceptance Testing
+      </span>
+      <h1 class="intro-title">
+        ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ການທົດສອບ<br/>
+        <span class="intro-accent-title">ລະບົບຕົ້ນແບບ (Prototype)</span>
+      </h1>
+      <p class="intro-desc">
+        ແພລດຟອມຈັດການການຮຽນຮູ້ ແລະ ລະບົບປະຕິບັດການຫຼັງບ້ານ ໂຄງການຮ່ວມມືພັດທະນາສີມືແຮງງານອາຊີວະສຶກສາ (SkillsLao TVET Platform)
+      </p>
+      <div class="intro-meta">
+        <div class="meta-item">
+          <i class="bi bi-person-badge"></i>
+          <span><b>ຜູ້ນຳສະເໜີ:</b> ຜູ້ປະສານງານໂຄງການ</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-calendar3"></i>
+          <span><b>ວັນທີປັບປຸງ:</b> 4 ມິຖຸນາ 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Objectives -->
+    <div class="slide">
+      <div class="slide-title-group">
+        <div class="slide-subtitle">Introduction</div>
+        <h2 class="slide-title">1. ວັດຖຸປະສົງຂອງການທົດສອບລະບົບ</h2>
+      </div>
+      <div class="grid-2col">
+        <div class="card-glass">
+          <h3 style="font-family:var(--font-title); margin-bottom:15px; color:var(--color-primary);">ເປົ້າໝາຍການທົດສອບ UAT</h3>
+          <ul class="check-list">
+            <li><strong>ຄວາມສົມເຫດສົມຜົນ (Process Logic)</strong>: ກວດສອບຄວາມຖືກຕ້ອງຂອງຂັ້ນຕອນການກົດສະຫຼັບໜ້າຈໍ (Screen Flow) ໃນແຕ່ລະ Use Case</li>
+            <li><strong>... ຄວາມງ່າຍໃນການນຳໃຊ້ (Usability & Copy)</strong>: ກວດສອບຄຳອະທິບາຍ ຂະໜາດປຸ່ມກົດ ພາສາທີ່ລະບຸ ແລະ ຂໍ້ມູນສະແດງຜົນໃນຕາຕະລາງຫຼັງບ້ານ</li>
+            <li><strong>ການເກັບກຳຂໍ້ມູນຄຳຄິດເຫັນ (Feedback)</strong>: ຮວບຮວມຂໍ້ຕິດຂັດເພື່ອຈັດສົ່ງຕໍ່ເປັນຄວາມຕ້ອງການທີ່ສົມບູນໃຫ້ທີມຂຽນໂຄ້ດລະບົບຈິງຕໍ່ໄປ</li>
+          </ul>
+        </div>
+        <div class="card-glass d-flex flex-column justify-content-between">
+          <div class="alert-box alert-box-warning">
+            <span class="alert-icon"><i class="bi bi-exclamation-triangle-fill"></i></span>
+            <div class="alert-content">
+              <h4>ໂປດເຂົ້າໃຈ: ນີ້ຄືລະບົບຕົ້ນແບບ (Prototype)</h4>
+              <p>ລະບົບທັງໝົດເຮັດໜ້າທີ່ຈຳລອງໜ້າຕາ ແລະ ການເຮັດວຽກຈຳລອງເທົ່ານັ້ນ ຂໍ້ມູນທີ່ມີການບັນທຶກ ຫຼື ກອກລົງໃນເວັບທັງໝົດຄືຂໍ້ມູນຕົວຢ່າງ ບໍ່ສົ່ງຜົນກະທົບຕໍ່ຖານຂໍ້ມູນລະບົບຈິງໃດໆທັງສິ້ນ ບໍ່ຕ້ອງກັງວົນວ່າລະບົບຈະເສຍຫາຍ</p>
+            </div>
+          </div>
+          <div class="alert-box alert-box-info" style="margin-top:20px;">
+            <span class="alert-icon"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4>ໄລຍະເວລາທົດສອບ UAT</h4>
+              <p>ພວກເຮົາຈຳກັດເປົ້າໝາຍເວລາການທົດສອບຂອງທຸກກຸ່ມໃຫ້ຢູ່ພາຍໃນ <b>90 ນາທີ</b> ເພື່ອຄວາມກະຊັບ ແລະ ບໍ່ດຶງເວລາການເຮັດວຽກຫຼັກຂອງຜູ້ເຂົ້າຮ່ວມ UAT ທຸກຄົນ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Portals & Roles -->
+    <div class="slide">
+      <div class="slide-title-group">
+        <div class="slide-subtitle">Architecture</div>
+        <h2 class="slide-title">2. ພາບລວມຂອງ 3 ແອັບພລິເຄຊັນ ແລະ 4 ບົດບາດ</h2>
+      </div>
+      <div class="grid-4col" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;">
+        <div class="role-card">
+          <div class="role-card-header">
+            <span class="role-name">Student (Learner)</span>
+            <div class="role-icon"><i class="bi bi-mortarboard"></i></div>
+          </div>
+          <p class="role-app-desc">ນັກສຶກສາ/ຜູ້ຮຽນ ຄົ້ນຫາຄອສ ລົງທະບຽນ ເຂົ້າຮຽນເຮັດຂໍ້ສອບແບບເຝິກຫັດ ແລະ ຊຳລະເງິນຜ່ານມືຖື ແລະ ເວັບ</p>
+          <span class="badge-role badge-role-portal" style="width:100%; text-align:center;">Learner Web Portal</span>
+          <span class="role-file-link"><i class="bi bi-file-earmark-spreadsheet"></i> Feedback_Learner.xlsx</span>
+        </div>
+        <div class="role-card">
+          <div class="role-card-header">
+            <span class="role-name">Instructor (ຄູຜູ້ສອນ)</span>
+            <div class="role-icon"><i class="bi bi-person-video3"></i></div>
+          </div>
+          <p class="role-app-desc">ຄູອາຈານ ຈັດການຫຼັກສູດບົດຮຽນ ສ້າງແບບທົດສອບ ດຶງລາຍງານຄວາມຄືບໜ້າ ແລະ ກວດໃຫ້ຄະແນນການບ້ານ</p>
+          <span class="badge-role badge-role-bo" style="width:100%; text-align:center;">Backoffice Portal</span>
+          <span class="role-file-link" style="color:var(--color-success);"><i class="bi bi-file-earmark-spreadsheet"></i> Feedback_Instructor.xlsx</span>
+        </div>
+        <div class="role-card">
+          <div class="role-card-header">
+            <span class="role-name">Program Admin</span>
+            <div class="role-icon"><i class="bi bi-building-gear"></i></div>
+          </div>
+          <p class="role-app-desc">ຜູ້ດູແລລະດັບວິທະຍາໄລ ຈັດການລາຍຊື່ນັກຮຽນກຸ່ມໃຫຍ່ ຄອນຟິກຄູຜູ້ສອນ ຈັດການລາຄາ ແລະ ອະນຸມັດການເຜີຍແຜ່ຄອສ</p>
+          <span class="badge-role badge-role-bo" style="width:100%; text-align:center;">Backoffice Portal</span>
+          <span class="role-file-link" style="color:var(--color-accent);"><i class="bi bi-file-earmark-spreadsheet"></i> Feedback_ProgramAdmin.xlsx</span>
+        </div>
+        <div class="role-card">
+          <div class="role-card-header">
+            <span class="role-name">Super Admin</span>
+            <div class="role-icon"><i class="bi bi-shield-lock"></i></div>
+          </div>
+          <p class="role-app-desc">ຜູ້ດູແລລະບົບສູງສຸດ ປັບແຕ່ງນະໂຍບາຍຄວາມປອດໄພ ເປີດປິດຟີເຈີ ເບິ່ງບັນທຶກການສົ່ງຂໍ້ຄວາມ ແລະ ລາຍງານຄວາມໂປ່ງໃສ</p>
+          <span class="badge-role badge-role-bo" style="width:100%; text-align:center;">Backoffice Portal</span>
+          <span class="role-file-link" style="color:var(--color-warning);"><i class="bi bi-file-earmark-spreadsheet"></i> Feedback_SuperAdmin.xlsx</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Testing Rules & Harness Bar -->
+    <div class="slide">
+      <div class="slide-title-group">
+        <div class="slide-subtitle">How to Test</div>
+        <h2 class="slide-title">3. ວິທີຄວບຄຸມ ແລະ ທົດລອງລັນສະຖານະການ (Harness Bar)</h2>
+      </div>
+      <div class="grid-2col">
+        <div class="card-glass">
+          <h3 style="font-family:var(--font-title); margin-bottom:12px; font-size:1.2rem; color:var(--color-primary);"><i class="bi bi-play-btn-fill" style="margin-right: 6px; vertical-align: middle;"></i>ການໃຊ້ Scenario Harness Bar (ແຖບດ້ານເທິງ)</h3>
+          <p style="font-size:0.9rem; color:var(--color-text-muted); line-height:1.5; margin-bottom:15px;">
+            ຢູ່ຫົວມຸມເທິງຂອງທຸກໜ້າຈໍຕົ້ນແບບຈະມີແຖບຕົວເລືອກຈຳລອງສາກເຮັດໜ້າທີ່ຄວບຄຸມສະຖານະໜ້າເວັບເພື່ອທົດສອບເຄສຕ່າງໆ:
+          </p>
+          <ul class="check-list" style="font-size:0.875rem;">
+            <li><strong>Main Flow / Happy Path</strong>: ເລີ່ມຕົ້ນດ້ວຍເຄສປົກກະຕິ ເຮັດວຽກຮາບຮື່ນ ແລະ ສິ້ນສຸດສົມບູນແບບ</li>
+            <li><strong>Alternative Flow (AF-xx)</strong>: ຈຳລອງສະຖານະການເກີດເລື່ອງອື່ນໆ ເຊັ່ນ ອັບໂຫລດໄຟລ໌ຜິດປະເພດ, ກົດຖອຍກັບ ຫຼື ອິນເຕີເນັດຂາດຫາຍກາງຄັນ</li>
+          </ul>
+        </div>
+        <div class="card-glass">
+          <h3 style="font-family:var(--font-title); margin-bottom:12px; font-size:1.2rem; color:var(--color-warning);"><i class="bi bi-exclamation-triangle-fill" style="margin-right: 6px; vertical-align: middle;"></i>ໜ້າຈໍສະແດງຜົນສະຖານະ Pending</h3>
+          <p style="font-size:0.9rem; color:var(--color-text-muted); line-height:1.5; margin-bottom:15px;">
+            ຫາກໜ້າຈໍດັ່ງກ່າວລະບຸຄຳວ່າ <b>Pending</b> ຫຼື ປຸ່ມກົດສະແດງສະຖານະສີຈາງບໍ່ສາມາດຄລິກເຊື່ອມໂຍງໜ້າຕ່າງໄດ້:
+          </p>
+          <ul class="check-list" style="font-size:0.875rem;">
+            <li>ໝາຍເຖິງ Use Case ນັ້ນບໍ່ໄດ້ຢູ່ໃນການພັດທະນາຂອງຕົວຈຳລອງຕົ້ນແບບນີ້</li>
+            <li><strong>ຄຳແນະນຳ</strong>: ບໍ່ຕ້ອງຕົກໃຈ ໃຫ້ເປີດໄຟລ໌ Excel ໃນແຖວ Use Case ນັ້ນໆ ແລະ ເລືອກຜົນການທົດສອບເປັນຊ່ອງ <b>N-T (Not Tested)</b> ທັນທີ ເພື່ອຂ້າມໄປເຮັດຂໍ້ຖັດໄປ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: How to Record Feedback -->
+    <div class="slide">
+      <div class="slide-title-group">
+        <div class="slide-subtitle">Feedback Rubric</div>
+        <h2 class="slide-title">4. ການກອກປະເມີນລົງຕາຕະລາງ Excel (Feedback Sheet)</h2>
+      </div>
+      <div class="card-glass">
+        <div class="grid-3col">
+          <div class="card-glass" style="background:#f0fdf4; border-color:#bbf7d0;">
+            <div style="font-size:1.8rem; color:var(--color-success); margin-bottom:8px;"><i class="bi bi-hand-thumbs-up"></i></div>
+            <h4 style="font-family:var(--font-title); margin-bottom:6px;">Result (ຜົນລັບ)</h4>
+            <p style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.4;">ປ້ອນຜົນລັບການເຮັດວຽກ:<br/>
+              <b>Pass</b> = ເຮັດວຽກໄດ້ຮາບຮື່ນ<br/>
+              <b>Fail</b> = ມີບັນຫາ ຂັ້ນຕອນບໍ່ກົງ ຫຼື ຈຸດສັບສົນ<br/>
+              <b>N-T</b> = ໜ້ານັ້ນກົດທົດສອບບໍ່ໄດ້ (Not Tested)</p>
+          </div>
+          <div class="card-glass" style="background:#eff6ff; border-color:#bfdbfe;">
+            <div style="font-size:1.8rem; color:var(--color-accent); margin-bottom:8px;"><i class="bi bi-star"></i></div>
+            <h4 style="font-family:var(--font-title); margin-bottom:6px;">Ease (ລະດັບຄວາມງ່າຍ)</h4>
+            <p style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.4;">... ປະເມີນຄວາມເພິ່ງພໍໃຈການຕອບສະໜອງ <b>ຄະແນນຕັ້ງແຕ່ 1 ເຖິງ 5</b>:<br/>
+              1 = ຊອກຫາຍາກຫຼາຍ ສັບສົນ ຊອກປຸ່ມບໍ່ເຫັນ<br/>
+              5 = ໃຊ້ງານງ່າຍ ເຂົ້າໃຈຂັ້ນຕອນທັນທີ</p>
+          </div>
+          <div class="card-glass" style="background:#fffbeb; border-color:#fef3c7;">
+            <div style="font-size:1.8rem; color:var(--color-warning); margin-bottom:8px;"><i class="bi bi-chat-left-text"></i></div>
+            <h4 style="font-family:var(--font-title); margin-bottom:6px;">Remark (ຄຳຄິດເຫັນ)</h4>
+            <p style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.4;">ຂຽນຂໍ້ຄວາມລະບຸສິ່ງທີ່ເກີດຂຶ້ນ ເຊັ່ນ ປຸ່ມບໍ່ເຫັນເດັ່ນ, ຄຳແປພາສາລາວສັບສົນ, ຫຼື ຕ້ອງການຟີວເພີ່ມເຕີມໃນລະບົບຈິງ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Student Case 1 - Register -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ຜູ້ຮຽນ)</div>
+          <h2 class="slide-title">5. ເຄສທີ 1: ສະໝັກສະມາຊິກໃໝ່</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.01 - Register as Learner</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ກົດເລືອກສະຖານະການ <b>Happy Path / Main Flow</b> ເທິງແຖບຈຳລອງດ້ານເທິງຂອງຕົ້ນແບບ</li>
+            <li>ກອກເບີໂທລະສັບມືຖື ເພື່ອທົດສອບລະບົບສົ່ງລະຫັດ OTP ຈຳລອງ</li>
+            <li>ກອກລະຫັດ OTP ຈຳລອງ (ເຊັ່ນ <b>123456</b>) ເພື່ອຜ່ານຂັ້ນຕອນຄວາມປອດໄພ</li>
+            <li>ປ້ອນຂໍ້ມູນສ່ວນຕົວ (ຊື່ຫຼິ້ນ, ເພດ, ວັນເກີດ) ແລະ ສະຖາບັນການສຶກສາເພື່ອເລີ່ມສ້າງໂປຣໄຟລ໌ຜູ້ຮຽນ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: User selects Other (External Learner)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.3A')"><b>AF-2A.3A</b>: External Learner selects Mobile OTP</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.3B')"><b>AF-2A.3B</b>: External Learner selects Google SSO</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.5A')"><b>AF-2A.5A</b>: Email / Mobile already registered</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.7C')"><b>AF-2A.7C</b>: OTP — change auth method (External)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Student ID not found in roster</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: User clicks Back on Login Method Selection</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9B')"><b>AF-9B</b>: TVET selects Google SSO as login method</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-11A')"><b>AF-11A</b>: Password and confirm password do not match</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-12A')"><b>AF-12A</b>: External Learner — Complete Profile editable form</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-14A')"><b>AF-14A</b>: Mobile app — offer to set a PIN (optional)</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ແບບຟອມການກອກໃຊ້ງານງ່າຍ ແລະ ສັບສົນບໍ່? ຄຳອະທິບາຍພາສາລາວຖືກຕ້ອງ ແລະ ອ່ານເຂົ້າໃຈງ່າຍຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/register-as-learner</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/register-as-learner" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Student Case 2 - Login -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ຜູ້ຮຽນ)</div>
+          <h2 class="slide-title">6. ເຄສທີ 2: ເຂົ້າໃຊ້ລະບົບ ແລະ ຕັ້ງ PIN</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.02 - Login — Learner</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເລືອກສະຖານະການ <b>Main Flow</b> ເພື່ອທົດສອບລັອກອິນດ້ວຍເບີມືຖື/ອີເມລຮັບ OTP</li>
+            <li>ທົດລອງການເຂົ້າໃຊ້ງານດ້ວຍລະຫັດ <b>PIN 6 ຫຼັກ</b> ເພື່ອຄວາມສະດວກໃນການເຂົ້າໃຊ້ງານດ່ວນ</li>
+            <li>ຫຼື ທົດລອງເຂົ້າໃຊ້ງານຜ່ານ <b>Google SSO</b> ຈຳລອງລະບົບລົງຊື່ເຂົ້າໃຊ້ອັດໂນມັດ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: User selects Sign in with Google</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.2A')"><b>AF-2A.2A</b>: Google SSO unavailable — error shown on login screen</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Account not found (opens Account Not Found dialog)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: Wrong password — not yet locked (inline error)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3C')"><b>AF-3C</b>: Password wrong 5× — account locked (lockout timer)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3D')"><b>AF-3D</b>: Account suspended or revoked (opens Suspended dialog)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: PIN detected on device — show PIN Login screen</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A.3A')"><b>AF-1A.3A</b>: PIN wrong — under 5 attempts</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A.3B')"><b>AF-1A.3B</b>: PIN wrong 5× or already locked — fallback to password</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ປຸ່ມແປ້ນກົດລະຫັດ PIN ໃຊ້ງານສະດວກຫຼືບໍ່? ການຕອບສະໜອງວ່ອງໄວ ແລະ ປອດໄພຕາມການໃຊ້ງານຈິງບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/login-learner</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/login-learner" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8: Student Case 3 - Browse Course -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ຜູ້ຮຽນ)</div>
+          <h2 class="slide-title">7. ເຄສທີ 3: ຄົ້ນຫາ ແລະ ຄັດກອງວິຊາຮຽນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.06 - Browse Course Catalog</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດໜ້າຫຼັກແຄດຕາລັອກວິຊາຮຽນ (Course Catalog)</li>
+            <li>ທົດລອງຄົ້ນຫາຊື່ຫຼັກສູດວິຊາໃນຊ່ອງການຄົ້ນຫາ (Search Box)</li>
+            <li>ທົດສອບຄັດກອງຫຼັກສູດ (Filter) ແຍກຕາມໄລຍະເວລາຂອງຫຼັກສູດ ຫຼື ລະດັບຄວາມຍາກ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: Enrolled, awaiting instructor approval for cohort</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: Enrolled, approved, ready to learn</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: No results after search</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: No results after tag filter</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9A')"><b>AF-9A</b>: ผู้เยี่ยมชมกดการ์ด — ดูรายละเอียดได้แต่ต้องล็อกอินเพื่อลงทะเบียน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10A')"><b>AF-10A</b>: Course or Specialization clicked has been withdrawn</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">幕ການສະແດງຜົນລາຍຊື່ຫຼັກສູດມີຄວາມສວຍງາມ ຄົ້ນຫາ ແລະ ຈັດລຽງໄດ້ວ່ອງໄວຕາມຄວາມຕ້ອງການບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/browse-course-catalog</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/browse-course-catalog" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9: Student Case 4 - Take Lesson -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ຜູ້ຮຽນ)</div>
+          <h2 class="slide-title">8. ເຄສທີ 4: ເຂົ້າຮຽນຫຼັກສູດ & ຄວາມຄືບໜ້າ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.08 - Take Lesson & Track Progress</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ກົດປຸ່ມລົງທະບຽນເຂົ້າຮຽນໃນຫຼັກສູດທົ່ວໄປເພື່ອເປີດໜ້າຕ່າງຫຼິ້ນບົດຮຽນ</li>
+            <li>ທົດລອງຄລິກຮຽນໃນແຕ່ລະບົດວິຊາເພື່ອເບິ່ງວິດີໂອ ເອກສານ PDF ຫຼື ເນື້ອຫາການສອນ</li>
+            <li>ກວດສອບແຖບເປີເຊັນສະສົມຄວາມຄືບໜ້າການຮຽນຮູ້ສ່ວນຕົວ (Progress Bar)</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: Not enrolled in any course yet</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Learner selects Assignment tab</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: Learner selects Forum tab</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: Course removed from catalog after enrollment</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: Course content unavailable (critical error)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A')"><b>AF-6A</b>: Selected lesson is not yet accessible</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: Learner opens Discussion Board in Course Player</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7B')"><b>AF-7B</b>: Selected lesson is an assignment</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: Course completion criteria met</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Course removed from catalog after enrollment</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: เนื้อหาคอร์สไม่พร้อมใช้งาน (ข้อผิดพลาดร้ายแรง)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Selected lesson is not yet accessible</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ແຖບສະສົມເປີເຊັນມີການຄຳນວນ ແລະ ອັບເດດກົງຕາມສັດສ່ວນເນື້ອຫາທີ່ທ່ານເປີດຮຽນຄ້າງໄວ້ຈິງບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/take-lesson-and-track-progress</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/take-lesson-and-track-progress" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10: Student Case 5 - Take Quiz -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ຜູ້ຮຽນ)</div>
+          <h2 class="slide-title">9. ເຄສທີ 5: ການເຮັດຄຳຖາມທົດສອບຄວາມຮູ້</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-PLY.02 - Take Quiz</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດເຂົ້າໜ້າຕ່າງເຮັດຂໍ້ສອບເກັບຄະແນນຈຳລອງ (Quiz) ທ້າຍບົດຮຽນ</li>
+            <li>ເຮັດແບບທົດສອບແບບຕົວເລືອກຕອບປໍລະໄນ (MCQ) ຫຼື ໂຈດປະເພດ ຖືກ-ຜິດ</li>
+            <li>ກົດຢືນຢັນການສົ່ງເຈ້ຍຄຳຕອບ (Submit) ເພື່ອກວດສອບການສະແດງຜົນເກຣດ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Resume an in-progress attempt</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: Max attempts reached — view past result</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-11A')"><b>AF-11A</b>: Timer expires — system auto-submits</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-12A')"><b>AF-12A</b>: Submit with unanswered questions — warning</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-16A')"><b>AF-16A</b>: Learner retakes after seeing result</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-16B')"><b>AF-16B</b>: Max attempts exhausted — result read-only</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: Connection lost during quiz</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7B')"><b>AF-7B</b>: Learner exits before submitting</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: Learner revises a previously answered question</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-17A')"><b>AF-17A</b>: Resume from a different device</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ໜ້າຈໍກວດຄຳຕອບມີຜົນການອະທິບາຍສະເລ່ຍທີ່ເຂົ້າໃຈງ່າຍ ມີສີສັນ ຫຼື ໄອຄອນສື່ສານຊັດເຈນຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/take-quiz</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/take-quiz" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 11: Student Case 6 - Purchase Course -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ຜູ້ຮຽນ)</div>
+          <h2 class="slide-title">10. ເຄສທີ 6: ການຊື້ຫຼັກສູດຊຳລະເງິນຈຳລອງ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-BIL.01 - Purchase Course</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເລືອກສະໝັກຫຼັກສູດປະເພດທີ່ກຳນົດຄ່າທຳນຽມການຮຽນ (Paid Course)</li>
+            <li>ກົດສັ່ງຊື້ (Purchase) ແລະ ລະບຸການຊຳລະເງິນຜ່ານລະບົບທະນາຄານຈຳລອງ BCEL One</li>
+            <li>ສະແກນຊຳລະເງິນຜ່ານຄິວອາໂຄ້ດ ແລະ ກວດສອບການອະນຸມັດສິດເຂົ້າຮຽນອັດໂນມັດ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: No products available for this course</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1B')"><b>AF-1B</b>: Learner already has access to this course</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Learner cancels before payment</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Payment failed (declined / timed out / verification failed)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3C')"><b>AF-3C</b>: Learner receives course access during the payment process</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'cohost')"><b>cohost</b>: Success — cohost course (Start → Enrollment Confirmation SCR-LMS.05)</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຄວາມລື່ນໄຫຼໃນລະບົບຊຳລະເງິນຈຳລອງເຂົ້າໃຈງ່າຍຫຼືບໍ່? ໜ້າຈໍຊຳລະເງິນສຳເລັດສະແດງຜົນຊັດເຈນພຽງໃດ?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/purchase-course</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/purchase-course" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 12: Instructor Case 1 - Author Course Content -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Instructor (ຄູຜູ້ສອນ)</div>
+          <h2 class="slide-title">11. ເຄສທີ 1: ສ້າງບົດຮຽນ ແລະ ຫຼັກສູດ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.01 - Author Course Content</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເລືອກເມນູຈັດການຫຼັກສູດຫຼັງບ້ານ (<b>Author Course Content</b>)</li>
+            <li>ທົດລອງປ້ອນຂໍ້ມູນພື້ນຖານຫຼັກສູດ (ຊື່ວິຊາ, ຄຳອະທິບາຍວິຊາຫຍໍ້, ລະດັບການສຶກສາ)</li>
+            <li>ລອງສ້າງໂຄງສ້າງວິຊາ ເຊັ່ນ ເພີ່ມໂມດູນຫຼັກ, ບົດຮຽນຍ່ອຍ ແລະ ສ້າງສາລະບານວິດີໂອ</li>
+            <li>ກວດເບິ່ງຄວາມລື່ນໄຫຼຂອງການລາກ ແລະ ວາງຍ້າຍໂມດູນບົດຮຽນ (Drag and Drop)</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: View archived branch (read-only)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Rejected — show rejection feedback panel</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5B')"><b>AF-5B</b>: Edit after approval — new version path</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5C')"><b>AF-5C</b>: Create new version branch</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A')"><b>AF-6A</b>: Delete module (with lessons inside)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6B')"><b>AF-6B</b>: Delete lesson (with content items)</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">//ເຄື່ອງມືຈັດລຽງ ແລະ ປ້ອນຂໍ້ມູນເຂົ້າໃຈງ່າຍ ສຳລັບຄູຜູ້ຂຽນບົດຮຽນຫຼືບໍ່? ໂຄງສ້າງຕົ້ນໄມ້ເບິ່ງຊັບຊ້ອນເກີນໄປບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/author-course</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/author-course" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 13: Instructor Case 2 - Build Quiz -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Instructor (ຄູຜູ້ສອນ)</div>
+          <h2 class="slide-title">12. ເຄສທີ 2: ສ້າງແບບທົດສອບຄຳຖາມ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.02 - Build Quiz</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ກົດເພີ່ມໄອເທັມປະເພດຂໍ້ສອບ (<b>Build Quiz</b>) ທ້າຍບົດຮຽນຍ່ອຍ</li>
+            <li>ລອງສ້າງຂໍ້ສອບປະເພດປໍລະໄນ (MCQ) ພ້ອມກຳນົດຕົວເລືອກຕອບ ແລະ ເລືອກສະເລີຍຂໍ້ທີ່ຖືກ</li>
+            <li>ລອງຕັ້ງເກນຄະແນນສອບຜ່ານ (ເຊັ່ນ <b>70%</b>) ເພື່ອໃຊ້ຄັດກອງໃບຢັ້ງຢືນ ແລະ ໃບປະກາດສະນີຍະບັດ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9A')"><b>AF-9A</b>: AF 9A — Question fails validation</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10A')"><b>AF-10A</b>: AF 10A — Reorder questions</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10B')"><b>AF-10B</b>: AF 10B — Edit existing question</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10C')"><b>AF-10C</b>: AF 10C — Delete question</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10D')"><b>AF-10D</b>: AF 10D — Duplicate question</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10E')"><b>AF-10E</b>: AF 10E — Preview quiz (learner view)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-12A')"><b>AF-12A</b>: AF 12A — Quiz fails validation</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-14A')"><b>AF-14A</b>: AF 14A — Cancel new quiz before saving</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-14B')"><b>AF-14B</b>: AF 14B — Delete entire quiz (previously saved)</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ເຄື່ອງມືເພີ່ມຂໍ້ສອບໃຊ້ງານສະດວກຫຼືບໍ່? ການຕອບສະໜອງວ່ອງໄວ ແລະ ບໍ່ສັບສົນແມ່ນບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/build-quiz</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/build-quiz" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 14: Instructor Case 3 - Submit Course for Publish -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Instructor (ຄູຜູ້ສອນ)</div>
+          <h2 class="slide-title">13. ເຄສທີ 3: ຍື່ນຂໍອະນຸມັດເຜີຍແຜ່ຫຼັກສູດ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.05 - Submit Course for Publish</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເມື່ອຈັດທຳຂໍ້ມູນບົດຮຽນສຳເລັດແລ້ວ, ໃຫ້ກົດປຸ່ມ <b>Submit for Publish</b> (ສົ່ງຂໍອະນຸມັດເຜີຍແຜ່)</li>
+            <li>ກວດສອບຄວາມຖືກຕ້ອງຂອງສະຖານະການສົ່ງງານ ແລະ ລໍຖ້າແອດມິນສະຖາບັນສະກຣີນອະນຸມັດ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: AF-2A — Instructor cancels the dialog</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: AF-3A — Course content is incomplete</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: AF-3B — Pending review request already exists</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ສະຖານະການຍື່ນສົ່ງຄອສສະແດງຜົນຊັດເຈນ ແລະ ເຂົ້າໃຈຂັ້ນຕອນຖັດໄປຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/submit-course-for-publish</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/submit-course-for-publish" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 15: Instructor Case 4 - Cohort Dashboard -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Instructor (ຄູຜູ້ສອນ)</div>
+          <h2 class="slide-title">14. ເຄສທີ 4: ແດຊບອດຕິດຕາມຜູ້ຮຽນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.13 - Cohort Dashboard</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເຂົ້າເບິ່ງແດຊບອດສະຫຼຸບຄວາມຄືບໜ້າຂອງນັກຮຽນໃນວິຊາຮຽນ (<b>Cohort Dashboard</b>)</li>
+            <li>ສັງເກດຕົວສະແດງຜົນອັດຕາການຮຽນຜ່ານ, ຈຳນວນຜູ້ຮຽນສະເລ່ຍ ແລະ ຄະແນນສອບສະເລ່ຍຂອງທຸກຄົນໃນຮຸ່ນ</li>
+            <li>ກວດເບິ່ງປະຫວັດຜູ້ຮຽນລາຍຄົນເພື່ອວິເຄາະສັດສ່ວນຈຸດບົກພ່ອງການຮຽນຮູ້</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Instructor กดแท็บ \</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: Instructor กดแท็บ \</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2C')"><b>AF-2C</b>: Instructor กดแท็บ \</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2C.2A')"><b>AF-2C.2A</b>: รุ่นเรียนยังไม่เปิดใช้งาน Forum</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ກຣາຟສະຫຼຸບຜົນ ແລະ ຕາຕະລາງລາຍງານຜົນສະແດງຂໍ້ມູນຄົບຖ້ວນສຳລັບກວດວັດປະສິດທິພາບການຮຽນຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/cohort-dashboard</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/cohort-dashboard" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 16: Instructor Case 5 - Manage Assignment -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Instructor (ຄູຜູ້ສອນ)</div>
+          <h2 class="slide-title">15. ເຄສທີ 5: ກວດ ແລະ ປະເມີນວຽກການບ້ານ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.05 - Manage Assignment</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດຄິວວຽກລໍຖ້າການສົ່ງການບ້ານ ເພື່ອກົດເຂົ້າໄປກວດໃບວຽກໃບການບ້ານຂອງຜູ້ຮຽນ</li>
+            <li>ເລືອກປະເມີນຄະແນນການບ້ານແຍກຫົວຂໍ້ຕາມເກນຣູບຣິກຫຼັກ (<b>Rubric</b>)</li>
+            <li>ຂຽນຂໍ້ຄວາມສະແດງຄຳຄິດເຫັນແນະນຳເພີ່ມເຕີມນັກສຶກສາ ແລະ ກົດຢືນຢັນຄະແນນສົ່ງຄືນ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ครูผู้สอนแก้ Assignment เดิม</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: ครูผู้สอน Activate / Inactivate Assignment</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2C')"><b>AF-2C</b>: ครูผู้สอนลบ Assignment</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: เลือกผู้รับงานเป็นรายคน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: ครูผู้สอนกรองหรือค้นหา submission</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຕາຕະລາງຣູບຣິກໃຊ້ງານງ່າຍ ແລະ ເຂົ້າໃຈເງື່ອນໄຂບໍ່? ເມນູພິມຄຳວິຈານສະດວກພຽງໃດ?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/manage-assignment</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/manage-assignment" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 17: Instructor Case 6 - Manage Cohort -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Instructor (ຄູຜູ້ສອນ)</div>
+          <h2 class="slide-title">16. ເຄສທີ 6: ຈັດການກຸ່ມຊັ້ນຮຽນ Cohorts</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.04 - Manage Cohort</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດໜ້າຄວບຄຸມຮຸ່ນຫ້ອງຮຽນ (<b>Manage Cohort</b>) ເພື່ອສ້າງກຸ່ມຮຽນໄລຍະເວລາໃໝ່</li>
+            <li>ລອງຕັ້ງເງື່ອນໄຂສິດການເຂົ້າເຖິງວັນເປີດ/ປິດຮຽນຂອງຮຸ່ນ ແລະ ກຳນົດລາຄາສະເພາະຮຸ່ນ</li>
+            <li>ອະນຸມັດສິດ (Approve) ລາຍຄົນທີ່ມີຄວາມປະສົງຍື່ນຂໍເຂົ້າຮຽນວິຊາແບບຮຸ່ນຮຽນ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Instructor กดแท็บ \</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: Instructor กดแท็บ \</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2C')"><b>AF-2C</b>: Instructor กดแท็บ \</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2C.2A')"><b>AF-2C.2A</b>: รุ่นเรียนยังไม่เปิดใช้งาน Forum</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ປະຕິບັດການຕັ້ງຄ່າ ແລະ ຈັດຕັ້ງຫ້ອງຮຽນຍຸ້ງຍາກຫຼືບໍ່? ໜ້າຕາຕະລາງລາຍຊື່ມີຄວາມຊັດເຈນດີບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/cohort-dashboard</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/cohort-dashboard" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Slide 18: Program Admin Case 1 - Bulk Import Learners -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Program Admin (ແອດມິນສະຖາບັນ)</div>
+          <h2 class="slide-title">17. ເຄສທີ 1: ນຳເຂົ້າໄຟລ໌ Excel ລາຍຊື່ນັກຮຽນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.06 - Bulk Import Learners</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເລືອກເມນູຈັດການນຳເຂົ້າຂໍ້ມູນລາຍຊື່ນັກຮຽນ (<b>Bulk Import Learners</b>)</li>
+            <li>ເລືອກ ຫຼື ລາກໄຟລ໌ Excel ລາຍຊື່ນັກສຶກສາຕົວຢ່າງທີ່ຕ້ອງການນຳເຂົ້າ</li>
+            <li>ກວດສອບການລ້າງຈຸດຂໍ້ມູນເສຍ ແລະ ການທຳຄວາມສະອາດຂໍ້ມູນທີ່ລະບົບວິເຄາະອັດໂນມັດ</li>
+            <li>ກົດຢືນຢັນການນຳເຂົ້າຂໍ້ມູນເພື່ອສ້າງ ແລະ ອັບເດດປະຫວັດໂປຣໄຟລ໌ໃນລະບົບສະຖາບັນ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Invalid file format or corrupted file</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Some learner rows have validation errors</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: Program Administrator cancels import</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ລະບົບການອັບໂຫຼດ ແລະ ການສະແດງຜົນພຣີວິວຂໍ້ມູນກ່ອນບັນທຶກມີຄວາມຊັດເຈນ ເຂົ້າໃຈງ່າຍ ຫຼືບໍ່? ແຖບແຈ້ງເຕືອນຂໍ້ມູນຜິດພາດອ່ານເຂົ້າໃຈງ່າຍບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/bulk-import-learners</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/bulk-import-learners" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 19: Program Admin Case 2 - Provision Staff Account -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Program Admin (ແອດມິນສະຖາບັນ)</div>
+          <h2 class="slide-title">18. ເຄສທີ 2: ເຊີນບັນຊີຄູຜູ້ສອນຮ່ວມສະຖາບັນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.04 - Provision Staff Account</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເຂົ້າເມນູການເຊີນເຈົ້າໜ້າທີ່ ຫຼື ຄູຜູ້ສອນ (<b>Provision Staff Account</b>)</li>
+            <li>ປ້ອນຂໍ້ມູນບັນຊີຄູຜູ້ສອນທ່ານໃໝ່ (ຊື່, ອີເມລ, ສັງກັດວິທະຍາໄລ, ກຳນົດບົດບາດ)</li>
+            <li>ກົດສົ່ງຄຳເຊີນເພື່ອຈຳລອງກາຣສົ່ງອີເມລລິ້ງລົງທະບຽນເປີດໃຊ້ງານບັນຊີ (Activation Link)</li>
+            <li>ກວດສອບສະຖານະການເຊີນ ແລະ ສິດທີ່ຄູໄດ້ຮັບໃນສະຖາບັນ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Some recipients already have an account in the system</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5B')"><b>AF-5B</b>: Some recipients have a pending invitation</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5C')"><b>AF-5C</b>: Activation email failed for some recipients</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຂັ້ນຕອນການກຳນົດລະດັບບົດບາດ (Role) ແລະ ການເຊີນມີຄວາມເໝາະສົມ ແລະ ສະດວກວ່ອງໄວໃນການເຮັດວຽກຕົວຈິງຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/provision-staff-account</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/provision-staff-account" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 20: Program Admin Case 3 - Review and Approve Course -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Program Admin (ແອດມິນສະຖາບັນ)</div>
+          <h2 class="slide-title">19. ເຄສທີ 3: ກວດສອບ ແລະ ອະນຸມັດຫຼັກສູດ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.06 - Review and Approve Course</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດໜ້າລາຍການຄອສທີ່ຍື່ນຄຳຂໍອະນຸມັດ (<b>Review and Approve Course</b>)</li>
+            <li>ຄລິກເບິ່ງລາຍລະອຽດເນື້ອຫາຫຼັກສູດ ສາລະບານບົດຮຽນ ແລະ ແບບທົດສອບທີ່ຄູຍື່ນສົ່ງ</li>
+            <li>ລອງກົດຢືນຢັນການອະນຸມັດ (Approve) ເພື່ອເປີດຄອສເປັນສາທາລະນະ ຫຼື ກົດປະຕິເສດ (Reject) ພ້ອມພິມລະບຸເຫດຜົນທີ່ຕ້ອງປັບປຸງ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: Instructor opens Tasks — own submission history</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: Admin leaves review page without decision (Back)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Reject course (reject reason dialog opens)</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ໜ້າຈໍນຳສະເໜີຂໍ້ມູນຫຼັກສູດສຳລັບແອດມິນກວດສອບມີຄວາມຄົບຖ້ວນໃນການຕັດສິນໃຈອະນຸມັດຫຼືບໍ່? ປຸ່ມກົດຕ່າງໆມີຄວາມຊັດເຈນ ແລະ ເດັ່ນພໍບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/review-and-approve-course</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/review-and-approve-course" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 21: Program Admin Case 4 - Manage Course -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Program Admin (ແອດມິນສະຖາບັນ)</div>
+          <h2 class="slide-title">20. ເຄສທີ 4: ຕັ້ງລາຄາ ແລະ ຄອນຟິກປະເພດວິຊາ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.11 - Manage Course</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເຂົ້າສູ່ໜ້າຄວບຄຸມວິຊາຮຽນຫຼັກ (<b>Manage Course</b>) ແລ້ວເລືອກຄອສທີ່ຕ້ອງການຕັ້ງຄ່າ</li>
+            <li>ໄປທີ່ແທັບການຕັ້ງຄ່າວິຊາ (Course Settings) ເພື່ອເລືອກປະເພດໂໝດການເຂົ້າເຖິງ</li>
+            <li>ລອງເລືອກກຳນົດປະເພດແບບຟຣີ (Free Course) ຫຼື ແບບເສຍຄ່າທຳນຽມ (Paid Course) ພ້ອມກຳນົດລາຄາຄ່າສະໝັກຮຽນຂອງຄອສ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: No Published Courses in Program Admin\'s scope</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Change from Paid to Free while there are paid enrollees</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A.2A')"><b>AF-5A.2A</b>: Program Admin cancels the change</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ການບັນທຶກລາຄາ ແລະ ການປັບປ່ຽນສະຖານະຄອສໃຊ້ງານໄດ້ສະດວກບໍ່? ລະບົບການຈຳກັດສິດເມື່ອຄອສປ່ຽນຈາກເສຍເງິນເປັນຟຣີມີຄຳອະທິບາຍທີ່ຊັດເຈນຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/manage-course</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/manage-course" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 22: Program Admin Case 5 - Export Finance Transactions -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Program Admin (ແອດມິນສະຖາບັນ)</div>
+          <h2 class="slide-title">21. ເຄສທີ 5: ສົ່ງອອກລາຍງານທຸລະກຳການເງິນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-BIL.05 - Export Finance Transactions</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດໜ້າສະແດງບັນທຶກ ແລະ ປະຫວັດການເງິນລາຍຮັບ (<b>Export Finance Transactions</b>)</li>
+            <li>ຄັດກອງຊ່ວງໄລຍະເວລາທຸລະກຳທາງການເງິນ ຫຼື ຊ່ວງວັນທີທີ່ວິທະຍາໄລຕ້ອງການກວດສອບ</li>
+            <li>ກົດປຸ່ມສົ່ງອອກຂໍ້ມູນປະຫວັດທຸລະກຳເພື່ອດາວໂຫຼດໄຟລ໌ຕາຕະລາງໃນຮູບແບບ CSV ສຳລັບສົ່ງຕໍ່ໃຫ້ວຽກບັນຊີ ຫຼື MOES</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: ไม่มีข้อมูล subscription ตามตัวกรองที่เลือก</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຕາຕະລາງສະແດງປະຫວັດ ແລະ ຟັງຊັນການດາວໂຫຼດໄຟລ໌ຮອງຮັບຮູບແບບຂໍ້ມູນທີ່ສາມາດນຳໄປໃຊ້ງານໃນຂະບວນການເຮັດວຽກຕົວຈິງໄດ້ງ່າຍຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/export-finance-transactions</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/export-finance-transactions" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 23: Program Admin Case 6 - View Institution-level Aggregated Report -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Program Admin (ແອດມິນສະຖາບັນ)</div>
+          <h2 class="slide-title">22. ເຄສທີ 6: ສະຫຼຸບລາຍງານວິເຄາະລະດັບສະຖາບັນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-ANL.06 - View Institution-level Aggregated Report</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເຂົ້າເມນູສະຫຼຸບລາຍງານຜົນລະດັບວິທະຍາໄລ (<b>View Institution-level Aggregated Report</b>)</li>
+            <li>ກວດສອບສະຖິຕິຈຳນວນຜູ້ຮຽນ ອັດຕາການຮຽນຈົບ ແລະ ລາຍງານພາບລວມລະດັບວິທະຍາໄລ</li>
+            <li>ສັງເກດການປຽບທຽບຜົນເພື່ອລາຍງານໃຫ້ກັບກະຊວງສຶກສາທິການ ແລະ ກິລາ (MOES/DTVE) ຫຼື ຜູ້ບໍລິຈາກ (World Bank)</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: No institution data in the system</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1B')"><b>AF-1B</b>: Filter by institution type — zero results in that group</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Adjust trend chart time range (Institution Detail)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5B')"><b>AF-5B</b>: Institution has no enrolled students</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຮູບແບບແຜນພູມ (Charts) ກຣາຟສະແດງສະຖິຕິ ແລະ ລາຍງານຕາຕະລາງແຍກໝວດໝູ່ ໃຫ້ຂໍ້ມູນທີ່ຈຳເປັນໃນການສົ່ງມອບລາຍງານຜູ້ມີສ່ວນກ່ຽວຂ້ອງຄົບຖ້ວນຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/view-institution-level-aggregated-report</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/view-institution-level-aggregated-report" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Slide 24: Super Admin Case 1 - Manage System Configuration -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Super Admin (ແອດມິນລະບົບສູງສຸດ)</div>
+          <h2 class="slide-title">23. ເຄສທີ 1: ຕັ້ງຄ່າລະບົບຫຼັກແພລດຟອມ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-ADM.01 - Manage System Configuration</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເລືອກເມນູໜ້າຕັ້ງຄ່າລະດັບລະບົບຫຼັກ (<b>Manage System Configuration</b>)</li>
+            <li>ລອງປັບປ່ຽນນະໂຍບາຍລະຫັດຜ່ານຂັ້ນຕ່ຳ ແລະ ຂະໜາດຈຳກັດໄຟລ໌ອັບໂຫຼດ</li>
+            <li>ສັງເກດແຖບບັນທຶກ ແລະ ຜົນການບັງຄັບໃຊ້ນະໂຍບາຍຄວາມປອດໄພພາບລວມທົ່ວທຸກສະຖາບັນ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: Search or filter by category</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Validation fails</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ໂຄງສ້າງເມນູຕັ້ງຄ່າ ແລະ ກ່ອງປ້ອນນະໂຍບາຍ ເຂົ້າໃຈງ່າຍ ແລະ ປອດໄພພຽງພໍສຳລັບການເປັນແອດມິນສ່ວນກາງຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/manage-system-configuration</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/manage-system-configuration" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 25: Super Admin Case 2 - Manage Staff Profile -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Super Admin (ແອດມິນລະບົບສູງສຸດ)</div>
+          <h2 class="slide-title">24. ເຄສທີ 2: ຈັດການບັນຊີແອດມິນສະຖາບັນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.14 - Manage Staff Profile</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດໜ້າລາຍການຜູ້ໃຊ້ງານລະດັບພະນັກງານເຈົ້າໜ້າທີ່ວິທະຍາໄລ (<b>Manage Staff Profile</b>)</li>
+            <li>ລອງຄົ້ນຫາ (Search) ແລະ ຄັດກອງລາຍຊື່ແອດມິນສະຖາບັນຕາມພາກ ຫຼື ແຂວງ</li>
+            <li>ລອງກົດເປີດເບິ່ງໂປຣໄຟລ໌ ແລະ ແກ້ໄຂສິດ ຫຼື ສັ່ງລະງັບການໃຊ້ງານຊົ່ວຄາວ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: No back-office users in scope / search returns no results</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Set Role — add / remove roles for a user (multi-role)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A.3A')"><b>AF-3A.3A</b>: Removing a role would leave the user with no roles</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A.3B')"><b>AF-3A.3B</b>: Admin tries to assign a role above their authority</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: Email already in use by another account</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຕາຕະລາງຄົ້ນຫາ ແລະ ຟິວເຕີຄັດກອງສະຖາບັນແຍກແຍະລາຍລະອຽດຊັດເຈນ ແລະ ໂຫຼດຂໍ້ມູນທີ່ຈຳເປັນຄົບຖ້ວນບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/manage-staff-profile</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/manage-staff-profile" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 26: Super Admin Case 3 - View Security & Access Audit Log -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Super Admin (ແອດມິນລະບົບສູງສຸດ)</div>
+          <h2 class="slide-title">25. ເຄສທີ 3: ກວດສອບບັນທຶກຄວາມປອດໄພ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.21 - View Security & Access Audit Log</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດປະຫວັດລັອກບັນທຶກການເຂົ້າໃຊ້ ແລະ ຄວາມປອດໄພລະບົບ (<b>View Security & Access Audit Log</b>)</li>
+            <li>ລອງຄັດກອງຂໍ້ມູນການລັອກອິນທີ່ຫຼົ້ມເຫຼວ ຫຼື ປະຫວັດກວດສອບສິດຍ້ອນຫຼັງ</li>
+            <li>ກວດສອບການແຍກແຍະການກະທຳສຳຄັນ ເຊັ່ນ ການປັບແຕ່ງນະໂຍບາຍ ຫຼື ລຶບຂໍ້ມູນໃນລະບົບ</li>
+          </ul>
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຂໍ້ມູນລາຍລະອຽດ Audit Log ສະແດງ IP ວັນເວລາ ແລະ ຜົນການດຳເນີນການມີຄວາມຊັດເຈນ ແລະ ຕິດຕາມສືບປະຫວັດໄດ້ງ່າຍຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/view-security-access-audit-log</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/view-security-access-audit-log" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 27: Super Admin Case 4 - View Notification Delivery Log -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Super Admin (ແອດມິນລະບົບສູງສຸດ)</div>
+          <h2 class="slide-title">26. ເຄສທີ 4: ກວດສອບລາຍງານການແຈ້ງເຕືອນລະບົບ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-NOT.01 - View Notification Delivery Log</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດລະບົບສະແດງລັອກລາຍງານຄວາມສຳເລັດການແຈ້ງເຕືອນ (<b>View Notification Delivery Log</b>)</li>
+            <li>ລອງເຊັກລາຍການສົ່ງ SMS ແລະ ອີເມລຢືນຢັນຕົວຕົນຂອງຜູ້ສະໝັກຮຽນ</li>
+            <li>ສັງເກດລາຍການຄວາມຫຼົ້ມເຫຼວຂອງການຈັດສົ່ງເພື່ອຄົ້ນຫາ ແລະ ແກ້ໄຂບັນຫາຮ່ວມກັບເຄືອຂ່າຍ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ล้างค่าค้นหา</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ແຖບການຄັດກອງສະຖານະການສົ່ງສຳເລັດ/ຫຼົ້ມເຫຼວ ແລະ ການກວດສອບລະຫັດຜິດພາດຂອງ API ເຂົ້າໃຈໄດ້ງ່າຍບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/view-notification-delivery-log</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/view-notification-delivery-log" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 28: Super Admin Case 5 - Manage Institute -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Super Admin (ແອດມິນລະບົບສູງສຸດ)</div>
+          <h2 class="slide-title">27. ເຄສທີ 5: ຈັດການວິທະຍາໄລ ແລະ ສະຖາບັນ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.23 - Manage Institute</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>ເປີດໜ້າຈັດການຂໍ້ມູນລາຍຊື່ສະຖາບັນຫຼັກ ແລະ ວິທະຍາໄລອາຊີວະໃນສັງກັດ (<b>Manage Institute</b>)</li>
+            <li>ລອງກົດເປີດປິດສະຖານະການເຮັດວຽກຂອງວິທະຍາໄລຕົວຢ່າງ ຫຼື ເພີ່ມຂໍ້ມູນສະຖາບັນການສຶກສາໃໝ່</li>
+            <li>ກວດສອບການຜູກຕິດເຂດທີ່ຢູ່ສະຖາບັນເພື່ອດຶງຍອດລາຍງານປະມວນຜົນໃຫ້ຖືກຕ້ອງຕາມພາກ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>ຈຳລອງສະຖານະການ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: No institutions registered yet</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1B')"><b>AF-1B</b>: Super Administrator adds a new institution</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1B.3A')"><b>AF-1B.3A</b>: Institution name already exists (while adding)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: Super Administrator deletes an institution</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A.2A')"><b>AF-4A.2A</b>: Institution has affiliated learners — deletion not permitted</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A')"><b>AF-6A</b>: Institution name already exists (while editing)</button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">ຈຸດສັງເກດເພື່ອສົ່ງຄຳຄິດເຫັນ (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ຟອມກອກປະຫວັດສະຖາບັນ ແລະ ການເປີດ-ປິດການໃຊ້ງານ ສະດວກວ່ອງໄວໃນການອັບເດດຂໍ້ມູນຂອງວິທະຍາໄລອາຊີວະທັງໝົດໃນລາວຫຼືບໍ່?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://backoffice-portal.tvete-learning.info/manage-institute</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/manage-institute" data-role="backoffice"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 29: Submission / Wrap-Up -->
+    <div class="slide">
+      <div class="slide-title-group">
+        <div class="slide-subtitle">UAT Wrap-up</div>
+        <h2 class="slide-title">28. ຂັ້ນຕອນສຸດທ້າຍການບັນທຶກຜົນການທົດສອບ (UAT Wrap-up)</h2>
+      </div>
+      <div class="grid-2col">
+        <div class="card-glass">
+          <h3 style="font-family:var(--font-title); margin-bottom:15px; font-size:1.2rem; color:var(--color-primary);"><i class="bi bi-file-earmark-spreadsheet-fill"></i> ສິ່ງທີ່ຕ້ອງເຮັດໃນໄຟລ໌ Excel</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px;">
+            <li><b>ເປີດແທັບສຸດທ້າຍຂອງໄຟລ໌ Excel ຊື່ແທັບວ່າ Overall</b></li>
+            <li>ເຮັດຄະແນນສະຫຼຸບຄວາມເພິ່ງພໍໃຈໂດຍສະເລ່ຍພາບລວມການໃຊ້ງານໃນຊ່ອງຄະແນນ</li>
+            <li>ຕອບຄຳຖາມປາຍເປີດ 4 ຂໍ້ຫຼັກ (ສິ່ງທີ່ທ່ານມັກ, ຂໍ້ຄວນປັບປຸງ, ສິ່ງກີດຂວາງ, ຂໍ້ສະເໜີແນະອື່ນໆ)</li>
+            <li>ບັນທຶກໄຟລ໌ (Save) ກ່ອນຈະທຳການປິດໂປຣແກຣມ</li>
+          </ul>
+        </div>
+        <div class="card-glass">
+          <h3 style="font-family:var(--font-title); margin-bottom:15px; font-size:1.2rem; color:var(--color-success);"><i class="bi bi-patch-check-fill"></i> ກວດສອບຄວາມຄົບຖ້ວນ</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px;">
+            <li>ກວດສອບຊ່ອງ <b>Result (Pass/Fail/N-T)</b> ແລະ <b>Ease (1-5)</b> ຄົບທຸກຫົວຂໍ້ທີ່ທົດສອບ</li>
+            <li>ພິມລະບຸຂໍ້ຕິດຂັດ ຫຼື ຂໍ້ສະເໜີແນະລົງໃນຊ່ອງ <b>Remark</b> ໃນແຖວທີ່ມີບັນຫາໃຫ້ຮຽບຮ້ອຍ</li>
+            <li>ບັນທຶກ ແລະ ປິດໂປຣແກຣມໃຫ້ຮຽບຮ້ອຍ ໂດຍບໍ່ຕ້ອງລະບຸວ່າຈະຈັດສົ່ງໄປບ່ອນໃດ ຫຼື ທາງແຊັດກຸ່ມໃດ ເນື່ອງຈາກການປະຕິບັດຕົວຈິງຈະມີການລວບລວມໄຟລ໌ດ້ວຍວິທີອື່ນແຍກຕ່າງຫາກຢູ່ແລ້ວ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Controllers / Navigation Buttons -->
+  <div class="bottom-controllers">
+    <div class="slide-numbers" id="slideIndicator">Slide 1 of 10</div>
+    <div class="btn-nav-group">
+      <button class="btn-nav" id="btnPrev" onclick="navigateSlide(-1)" disabled>
+        <i class="bi bi-arrow-left"></i> ກ່ອນໜ້າ
+      </button>
+      <button class="btn-nav btn-nav-primary" id="btnNext" onclick="navigateSlide(1)">
+        ຖັດໄປ <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const progressBar = document.getElementById('progressBar');
+    const slideIndicator = document.getElementById('slideIndicator');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const settingsMenu = document.getElementById('settingsMenu');
+    
+    // Total slides count
+    const totalSlides = slides.length;
+
+    // Base URLs (Read from localStorage or defaults)
+    let learnerUrl = localStorage.getItem('uat_learner_url') || 'https://learner-portal.tvete-learning.info';
+    let backofficeUrl = localStorage.getItem('uat_backoffice_url') || 'https://backoffice-portal.tvete-learning.info';
+
+    // Set input values initially
+    document.getElementById('inputLearnerUrl').value = learnerUrl;
+    document.getElementById('inputBackofficeUrl').value = backofficeUrl;
+
+    function toggleDropdown(event) {
+      event.stopPropagation();
+      dropdownMenu.classList.toggle('show');
+      closeSettings();
+    }
+
+    function closeDropdown() {
+      dropdownMenu.classList.remove('show');
+    }
+
+    function toggleSettings(event) {
+      event.stopPropagation();
+      settingsMenu.classList.toggle('show');
+      closeDropdown();
+    }
+
+    function closeSettings() {
+      settingsMenu.classList.remove('show');
+    }
+
+    function saveSettings() {
+      const lUrl = document.getElementById('inputLearnerUrl').value.trim().replace(/\/$/, '');
+      const bUrl = document.getElementById('inputBackofficeUrl').value.trim().replace(/\/$/, '');
+      if (lUrl) {
+        learnerUrl = lUrl;
+        localStorage.setItem('uat_learner_url', lUrl);
+      }
+      if (bUrl) {
+        backofficeUrl = bUrl;
+        localStorage.setItem('uat_backoffice_url', bUrl);
+      }
+      closeSettings();
+      updateSlides(); // Reload active slide's iframe
+    }
+
+    function updateSlides() {
+      // Deactivate all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      // Activate current slide
+      const activeSlide = slides[currentSlide];
+      activeSlide.classList.add('active');
+
+      // Iframe handling for split-screen slides
+      const iframe = activeSlide.querySelector('iframe');
+      if (iframe) {
+        const path = iframe.getAttribute('data-src-path');
+        const role = iframe.getAttribute('data-role');
+        const base = (role === 'backoffice') ? backofficeUrl : learnerUrl;
+        const fullUrl = base + path;
+        
+        // Only load if the src is different to avoid double-loading
+        if (iframe.src !== fullUrl) {
+          iframe.src = fullUrl;
+        }
+        
+        // Update browser/device address bar text
+        const addressBar = activeSlide.querySelector('.device-address');
+        if (addressBar) {
+          addressBar.textContent = fullUrl;
+        }
+      }
+      
+      // Update progress bar
+      const progressPercent = ((currentSlide + 1) / totalSlides) * 100;
+      progressBar.style.width = progressPercent + '%';
+      
+      // Update Slide Indicator
+      slideIndicator.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
+      
+      // Update index dropdown item active state
+      const menuItems = document.querySelectorAll('.dropdown-item');
+      menuItems.forEach((item, idx) => {
+        if (idx === currentSlide) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+      
+      // Handle button states
+      btnPrev.disabled = currentSlide === 0;
+      
+      if (currentSlide === totalSlides - 1) {
+        btnNext.innerHTML = 'ສິ້ນສຸດການທົບທວນ UAT <i class="bi bi-check-lg"></i>';
+      } else {
+        btnNext.innerHTML = 'ຖັດໄປ <i class="bi bi-arrow-right"></i>';
+      }
+    }
+
+    function navigateSlide(direction) {
+      currentSlide += direction;
+      
+      // Bound checking
+      if (currentSlide < 0) currentSlide = 0;
+      if (currentSlide >= totalSlides) {
+        currentSlide = totalSlides - 1;
+        alert('ທົບທວນສະໄລ້ UAT ຄົບຖ້ວນແລ້ວ! ສາມາດສະຫຼັບໜ້າໄປທຳການທົດສອບຕົ້ນແບບ ແລະ ບັນທຶກຜົນໄດ້ເລີຍຄັບ');
+      }
+      
+      updateSlides();
+    }
+
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      updateSlides();
+      closeDropdown();
+    }
+
+    // Close dropdown on click outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.index-dropdown') && !e.target.closest('#settingsMenu') && !e.target.closest('#btnSettings')) {
+        closeDropdown();
+        closeSettings();
+      }
+    });
+
+    // Keyboard navigation (Arrow Keys)
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowRight' || event.key === ' ') {
+        navigateSlide(1);
+      } else if (event.key === 'ArrowLeft') {
+        navigateSlide(-1);
+      }
+    });
+
+
+    
+    function reloadIframe(btn) {
+      const slide = btn.closest('.slide');
+      const iframe = slide.querySelector('iframe');
+      if (iframe) {
+        const currentSrc = iframe.src;
+        // Strip any existing timestamp cache buster
+        const cleanUrl = currentSrc.split('&_t=')[0].split('?_t=')[0];
+        const sep = cleanUrl.includes('?') ? '&' : '?';
+        const timestamp = new Date().getTime();
+        const newUrl = cleanUrl + sep + '_t=' + timestamp;
+        
+        // Force reload by setting src
+        iframe.src = 'about:blank';
+        setTimeout(() => {
+          iframe.src = newUrl;
+        }, 10);
+        
+        // Brief button rotation animation
+        const icon = btn.querySelector('i');
+        if (icon) {
+          icon.style.transition = 'transform 0.5s ease';
+          icon.style.transform = 'rotate(360deg)';
+          setTimeout(() => {
+            icon.style.transition = 'none';
+            icon.style.transform = 'rotate(0deg)';
+          }, 500);
+        }
+      }
+    }
+
+    function changeIframeScenario(btn, scenarioId) {
+      // Find slide
+      const slide = btn.closest('.slide');
+      const iframe = slide.querySelector('iframe');
+      if (iframe) {
+        const basePath = iframe.getAttribute('data-src-path');
+        const role = iframe.getAttribute('data-role');
+        const base = (role === 'backoffice') ? backofficeUrl : learnerUrl;
+        
+        // Append scenario query and a timestamp cache buster to force a full browser reload
+        const sep = basePath.includes('?') ? '&' : '?';
+        const timestamp = new Date().getTime();
+        const fullUrl = base + basePath + sep + 'scenario=' + encodeURIComponent(scenarioId) + '&_t=' + timestamp;
+        
+        // Directly set src - the unique timestamp guarantees the browser reloads the iframe
+        iframe.src = fullUrl;
+        
+        // Update Address Bar text (show the clean URL to the user without cache buster)
+        const cleanUrl = base + basePath + sep + 'scenario=' + encodeURIComponent(scenarioId);
+        const addressBar = slide.querySelector('.device-address');
+        if (addressBar) {
+          addressBar.textContent = cleanUrl;
+        }
+      }
+      
+      // Update active state of buttons in this slide
+      const buttons = slide.querySelectorAll('.btn-scenario');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    // Boot
+    updateSlides();
+  </script>
+</body>
+</html>
