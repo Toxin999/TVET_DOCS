@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TVET Platform Prototype UAT Slideshow (Lao Version)</title>
+  <title>TVET Platform Prototype Review Slideshow (Lao Version)</title>
   <!-- Google Fonts: Outfit & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -831,7 +831,7 @@
     <div class="logo-section">
       <i class="bi bi-display logo-icon"></i>
       <span class="logo-text">SkillsLao TVET</span>
-      <span class="logo-badge">UAT Prototype Deck</span>
+      <span class="logo-badge">Prototype Review Deck</span>
     </div>
     <div class="index-dropdown" style="display: flex; gap: 12px; align-items: center;">
       <!-- settings button -->
@@ -844,7 +844,7 @@
       
       <!-- Settings dropdown menu -->
       <div class="settings-menu" id="settingsMenu">
-        <h4 style="font-family:var(--font-title); margin-bottom:12px; font-size:1rem; border-bottom:1px solid #e2e8f0; padding-bottom:6px; font-weight:700;">ຕັ້ງຄ່າລະບົບ UAT</h4>
+        <h4 style="font-family:var(--font-title); margin-bottom:12px; font-size:1rem; border-bottom:1px solid #e2e8f0; padding-bottom:6px; font-weight:700;">ຕັ້ງຄ່າລະບົບທົດສອບ</h4>
         <div style="margin-bottom:12px;">
           <label style="font-size:0.8rem; font-weight:700; display:block; margin-bottom:4px; color:var(--color-text-main);">ລະບົບຜູ້ຮຽນ (Learner Portal)</label>
           <input type="text" id="inputLearnerUrl" value="https://learner-portal.tvete-learning.info" style="width:100%; padding:6px 10px; border-radius:6px; border:1px solid #cbd5e1; font-size:0.85rem; font-family:monospace;">
@@ -858,7 +858,7 @@
 
                   <!-- Slides list dropdown menu -->
       <div class="dropdown-menu" id="dropdownMenu">
-        <button class="dropdown-item" onclick="goToSlide(0)">1. ໜ້າທຳອິດນຳສະເໜີ UAT</button>
+        <button class="dropdown-item" onclick="goToSlide(0)">1. ໜ້າທຳອິດນຳສະເໜີລະບົບຕົ້ນແບບ</button>
         <button class="dropdown-item" onclick="goToSlide(1)">2. ວັດຖຸປະສົງການທົດສອບ</button>
         <button class="dropdown-item" onclick="goToSlide(2)">3. ພາບລວມລະບົບ & ບົດບາດ</button>
         <button class="dropdown-item" onclick="goToSlide(3)">4. ກົດກະຕິກາ & Harness Bar</button>
@@ -886,7 +886,7 @@
         <button class="dropdown-item" onclick="goToSlide(25)">26. ເຄສແອດມິນລະບົບ 3: ກວດສອບບັນທຶກຄວາມປອດໄພ</button>
         <button class="dropdown-item" onclick="goToSlide(26)">27. ເຄສແອດມິນລະບົບ 4: ກວດສອບລາຍງານການແຈ້ງເຕືອນ</button>
         <button class="dropdown-item" onclick="goToSlide(27)">28. ເຄສແອດມິນລະບົບ 5: ຈັດການສະຖາບັນ ແລະ ຂໍ້ມູນພື້ນຖານ</button>
-        <button class="dropdown-item" onclick="goToSlide(28)">29. ການສະຫຼຸບຜົນ UAT</button>
+        <button class="dropdown-item" onclick="goToSlide(28)">29. ການສະຫຼຸບຜົນແລະຄຳຄິດເຫັນ</button>
       </div>
     </div>
   </div>
@@ -895,7 +895,7 @@
     <!-- Slide 1: Welcome / Intro -->
     <div class="slide active intro-slide">
       <span class="intro-badge">
-        <i class="bi bi-rocket-takeoff-fill"></i> User Acceptance Testing
+        <i class="bi bi-rocket-takeoff-fill"></i> Prototype Simulation Testing
       </span>
       <h1 class="intro-title">
         ຍິນດີຕ້ອນຮັບເຂົ້າສູ່ການທົດສອບ<br/>
@@ -924,7 +924,7 @@
       </div>
       <div class="grid-2col">
         <div class="card-glass">
-          <h3 style="font-family:var(--font-title); margin-bottom:15px; color:var(--color-primary);">ເປົ້າໝາຍການທົດສອບ UAT</h3>
+          <h3 style="font-family:var(--font-title); margin-bottom:15px; color:var(--color-primary);">ເປົ້າໝາຍການທົດສອບລະບົບຕົ້ນແບບ</h3>
           <ul class="check-list">
             <li><strong>ຄວາມສົມເຫດສົມຜົນ (Process Logic)</strong>: ກວດສອບຄວາມຖືກຕ້ອງຂອງຂັ້ນຕອນການກົດສະຫຼັບໜ້າຈໍ (Screen Flow) ໃນແຕ່ລະ Use Case</li>
             <li><strong>... ຄວາມງ່າຍໃນການນຳໃຊ້ (Usability & Copy)</strong>: ກວດສອບຄຳອະທິບາຍ ຂະໜາດປຸ່ມກົດ ພາສາທີ່ລະບຸ ແລະ ຂໍ້ມູນສະແດງຜົນໃນຕາຕະລາງຫຼັງບ້ານ</li>
@@ -942,8 +942,8 @@
           <div class="alert-box alert-box-info" style="margin-top:20px;">
             <span class="alert-icon"><i class="bi bi-lightbulb-fill"></i></span>
             <div class="alert-content">
-              <h4>ໄລຍະເວລາທົດສອບ UAT</h4>
-              <p>ພວກເຮົາຈຳກັດເປົ້າໝາຍເວລາການທົດສອບຂອງທຸກກຸ່ມໃຫ້ຢູ່ພາຍໃນ <b>90 ນາທີ</b> ເພື່ອຄວາມກະຊັບ ແລະ ບໍ່ດຶງເວລາການເຮັດວຽກຫຼັກຂອງຜູ້ເຂົ້າຮ່ວມ UAT ທຸກຄົນ</p>
+              <h4>ໄລຍະເວລາທົດສອບລະບົບຕົ້ນແບບ</h4>
+              <p>ພວກເຮົາຈຳກັດເປົ້າໝາຍເວລາການທົດສອບຂອງທຸກກຸ່ມໃຫ້ຢູ່ພາຍໃນ <b>90 ນາທີ</b> ເພື່ອຄວາມກະຊັບ ແລະ ບໍ່ດຶງເວລາການເຮັດວຽກຫຼັກຂອງຜູ້ຮ່ວມທົດສອບລະບົບຕົ້ນແບບທຸກຄົນ</p>
             </div>
           </div>
         </div>
@@ -2387,8 +2387,8 @@
     <!-- Slide 29: Submission / Wrap-Up -->
     <div class="slide">
       <div class="slide-title-group">
-        <div class="slide-subtitle">UAT Wrap-up</div>
-        <h2 class="slide-title">28. ຂັ້ນຕອນສຸດທ້າຍການບັນທຶກຜົນການທົດສອບ (UAT Wrap-up)</h2>
+        <div class="slide-subtitle">Prototype Wrap-up</div>
+        <h2 class="slide-title">28. ຂັ້ນຕອນສຸດທ້າຍການບັນທຶກຜົນການທົດສອບ (Prototype Wrap-up)</h2>
       </div>
       <div class="grid-2col">
         <div class="card-glass">
@@ -2529,7 +2529,7 @@
       btnPrev.disabled = currentSlide === 0;
       
       if (currentSlide === totalSlides - 1) {
-        btnNext.innerHTML = 'ສິ້ນສຸດການທົບທວນ UAT <i class="bi bi-check-lg"></i>';
+        btnNext.innerHTML = 'ສິ້ນສຸດການທົບທວນລະບົບຕົ້ນແບບ <i class="bi bi-check-lg"></i>';
       } else {
         btnNext.innerHTML = 'ຖັດໄປ <i class="bi bi-arrow-right"></i>';
       }
@@ -2542,7 +2542,7 @@
       if (currentSlide < 0) currentSlide = 0;
       if (currentSlide >= totalSlides) {
         currentSlide = totalSlides - 1;
-        alert('ທົບທວນສະໄລ້ UAT ຄົບຖ້ວນແລ້ວ! ສາມາດສະຫຼັບໜ້າໄປທຳການທົດສອບຕົ້ນແບບ ແລະ ບັນທຶກຜົນໄດ້ເລີຍຄັບ');
+        alert('ທົບທວນສະໄລ້ທົດສອບຕົ້ນແບບ ຄົບຖ້ວນແລ້ວ! ສາມາດສະຫຼັບໜ້າໄປທຳການທົດສອບຕົ້ນແບບ ແລະ ບັນທຶກຜົນໄດ້ເລີຍຄັບ');
       }
       
       updateSlides();
