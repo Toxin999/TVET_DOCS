@@ -887,6 +887,7 @@
         <button class="dropdown-item" onclick="goToSlide(26)">27. เคสแอดมินระบบ 4: ตรวจสอบรายงานแจ้งเตือน</button>
         <button class="dropdown-item" onclick="goToSlide(27)">28. เคสแอดมินระบบ 5: จัดการวิทยาลัยและข้อมูลพื้นฐาน</button>
         <button class="dropdown-item" onclick="goToSlide(28)">29. การสรุปผลและข้อคิดเห็น</button>
+        <button class="dropdown-item" onclick="goToSlide(29)">30. เสร็จสิ้นการรีวิว & ขั้นตอนถัดไป</button>
       </div>
     </div>
   </div>
@@ -2388,7 +2389,7 @@
     <div class="slide">
       <div class="slide-title-group">
         <div class="slide-subtitle">Prototype Wrap-up</div>
-        <h2 class="slide-title">28. ขั้นตอนสุดท้ายการบันทึกผลการทดสอบ</h2>
+        <h2 class="slide-title">29. ขั้นตอนสุดท้ายการบันทึกผลการทดสอบ</h2>
       </div>
       <div class="grid-2col">
         <div class="card-glass">
@@ -2407,6 +2408,37 @@
             <li>พิมพ์ระบุข้อติดขัดหรือข้อเสนอแนะลงในช่อง <b>Remark</b> ในแถวที่มีปัญหาให้เรียบร้อย</li>
             <li>บันทึกและปิดโปรแกรมให้เรียบร้อย โดยไม่ต้องระบุว่าจะจัดส่งไปที่ใดหรือทางแชตกลุ่มใด เนื่องจากการปฏิบัติจริงจะมีการรวบรวมไฟล์ด้วยวิธีอื่นแยกต่างหากอยู่แล้ว</li>
           </ul>
+        </div>
+      </div>
+    <!-- Slide 30: Thank You & Next Steps -->
+    <div class="slide">
+      <div class="slide-title-group">
+        <div class="slide-subtitle">Wrap-up & Next Steps</div>
+        <h2 class="slide-title">30. เสร็จสิ้นการรีวิวระบบต้นแบบ & ขั้นตอนถัดไป</h2>
+      </div>
+      <div class="grid-2col">
+        <div class="card-glass">
+          <h3 style="font-family:var(--font-title); margin-bottom:15px; font-size:1.2rem; color:var(--color-primary);"><i class="bi bi-clock-history"></i> ขั้นตอนถัดไปของโครงการ (Next Steps)</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:16px;">
+            <li><strong>รวบรวมและวิเคราะห์ข้อมูลป้อนกลับ (Consolidate Feedback)</strong><br/>ทีมผู้พัฒนาจะรวบรวมข้อเสนอแนะและปัญหาการใช้งานจากผู้ร่วมรีวิวทุกคนเพื่อจัดกลุ่มความจำเป็น</li>
+            <li><strong>จัดลำดับความสำคัญเพื่อการพัฒนาจริง (Prioritization)</strong><br/>จำแนกฟังก์ชันที่เป็นหัวใจหลักและประเด็นการออกแบบเพื่อนำไปพัฒนาโครงสร้างระบบให้สมบูรณ์ขึ้น</li>
+            <li><strong>เริ่มกระบวนการพัฒนาซอฟต์แวร์จริง (System Development)</strong><br/>นำผลการรีวิวและแบบจำลองที่ผ่านการปรับปรุงไปเป็นพิมพ์เขียว (Blueprint) ในการเขียนโค้ดระบบจริงต่อไป</li>
+          </ul>
+        </div>
+        <div class="card-glass d-flex flex-column justify-content-between" style="background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);">
+          <div>
+            <h3 style="font-family:var(--font-title); margin-bottom:15px; font-size:1.2rem; color:var(--color-accent);"><i class="bi bi-chat-heart-fill"></i> ขอบพระคุณผู้ร่วมทดสอบ (Thank You)</h3>
+            <p style="font-size:0.92rem; color:var(--color-text-main); line-height:1.6; margin-bottom:15px;">
+              ขอขอบพระคุณอาจารย์ ผู้แทนวิทยาลัย แอดมินระบบ และผู้ร่วมโครงการทุกท่านเป็นอย่างสูงที่สละเวลาอันมีค่าในการร่วมทบทวนระบบต้นแบบจำลองในวันนี้ ความคิดเห็นของท่านมีคุณค่ายิ่งต่อการร่วมพัฒนาแพลตฟอร์มการจัดการเรียนรู้อาชีวศึกษา (SkillsLao TVET Platform) ให้ตอบโจทย์ผู้ใช้งานจริงและก้าวหน้าอย่างมั่นคง
+            </p>
+          </div>
+          <div class="alert-box alert-box-info" style="margin-top:10px; border-color:#bfdbfe; background:#eff6ff;">
+            <span class="alert-icon"><i class="bi bi-info-circle-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.9rem;">เปิดพื้นที่เพื่อการสอบถาม (Q&A)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4; color:var(--color-text-muted);">ท่านสามารถสอบถามข้อสงสัยเพิ่มเติม พูดคุยแลกเปลี่ยนความคิดเห็น หรือชี้แนะแนวทางที่ควรปรับปรุงได้ทันทีในช่วงท้ายชั่วโมงนี้ครับ</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
