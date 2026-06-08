@@ -857,37 +857,49 @@
       </div>
 
                   <!-- Slides list dropdown menu -->
-      <div class="dropdown-menu" id="dropdownMenu">
+            <div class="dropdown-menu" id="dropdownMenu">
         <button class="dropdown-item" onclick="goToSlide(0)">1. หน้าแรกนำเสนอระบบต้นแบบ</button>
         <button class="dropdown-item" onclick="goToSlide(1)">2. วัตถุประสงค์การทดสอบ</button>
         <button class="dropdown-item" onclick="goToSlide(2)">3. ภาพรวมระบบ & บทบาท</button>
         <button class="dropdown-item" onclick="goToSlide(3)">4. กฎกติกา & Harness Bar</button>
         <button class="dropdown-item" onclick="goToSlide(4)">5. วิธีบันทึกผลลง Excel</button>
-        <button class="dropdown-item" onclick="goToSlide(5)">6. เคสผู้เรียน 1: สมัครสมาชิก</button>
-        <button class="dropdown-item" onclick="goToSlide(6)">7. เคสผู้เรียน 2: เข้าใช้และตั้ง PIN</button>
-        <button class="dropdown-item" onclick="goToSlide(7)">8. เคสผู้เรียน 3: ค้นหาหลักสูตร</button>
-        <button class="dropdown-item" onclick="goToSlide(8)">9. เคสผู้เรียน 4: เริ่มเรียน & บันทึกผล</button>
-        <button class="dropdown-item" onclick="goToSlide(9)">10. เคสผู้เรียน 5: ทำควิซ</button>
-        <button class="dropdown-item" onclick="goToSlide(10)">11. เคสผู้เรียน 6: ชำระค่าธรรมเนียม</button>
-        <button class="dropdown-item" onclick="goToSlide(11)">12. เคสผู้สอน 1: สร้างบทเรียนและคอร์ส</button>
-        <button class="dropdown-item" onclick="goToSlide(12)">13. เคสผู้สอน 2: สร้างข้อสอบควิซ</button>
-        <button class="dropdown-item" onclick="goToSlide(13)">14. เคสผู้สอน 3: ยื่นขออนุมัติเผยแพร่</button>
-        <button class="dropdown-item" onclick="goToSlide(14)">15. เคสผู้สอน 4: แดชบอร์ดผู้เรียน</button>
-        <button class="dropdown-item" onclick="goToSlide(15)">16. เคสผู้สอน 5: ตรวจงานการบ้าน</button>
-        <button class="dropdown-item" onclick="goToSlide(16)">17. เคสผู้สอน 6: จัดการกลุ่มชั้นเรียน</button>
-        <button class="dropdown-item" onclick="goToSlide(17)">18. เคสแอดมินสถาบัน 1: นำเข้าไฟล์รายชื่อนักเรียน</button>
-        <button class="dropdown-item" onclick="goToSlide(18)">19. เคสแอดมินสถาบัน 2: เชิญบัญชีครูผู้สอน</button>
-        <button class="dropdown-item" onclick="goToSlide(19)">20. เคสแอดมินสถาบัน 3: ตรวจสอบและอนุมัติหลักสูตร</button>
-        <button class="dropdown-item" onclick="goToSlide(20)">21. เคสแอดมินสถาบัน 4: ตั้งราคาและประเภทคอร์ส</button>
-        <button class="dropdown-item" onclick="goToSlide(21)">22. เคสแอดมินสถาบัน 5: ส่งออกรายงานธุรกรรมการเงิน</button>
-        <button class="dropdown-item" onclick="goToSlide(22)">23. เคสแอดมินสถาบัน 6: สรุปรายงานวิเคราะห์สถาบัน</button>
-        <button class="dropdown-item" onclick="goToSlide(23)">24. เคสแอดมินระบบ 1: ตั้งค่าระบบหลัก</button>
-        <button class="dropdown-item" onclick="goToSlide(24)">25. เคสแอดมินระบบ 2: จัดการบัญชีแอดมินสถาบัน</button>
-        <button class="dropdown-item" onclick="goToSlide(25)">26. เคสแอดมินระบบ 3: ตรวจสอบบันทึกความปลอดภัย</button>
-        <button class="dropdown-item" onclick="goToSlide(26)">27. เคสแอดมินระบบ 4: ตรวจสอบรายงานแจ้งเตือน</button>
-        <button class="dropdown-item" onclick="goToSlide(27)">28. เคสแอดมินระบบ 5: จัดการวิทยาลัยและข้อมูลพื้นฐาน</button>
-        <button class="dropdown-item" onclick="goToSlide(28)">29. การสรุปผลและข้อคิดเห็น</button>
-        <button class="dropdown-item" onclick="goToSlide(29)">30. เสร็จสิ้นการรีวิว & ขั้นตอนถัดไป</button>
+        <button class="dropdown-item" onclick="goToSlide(5)">6. เคสผู้เรียน 1: สมัครสมาชิกใหม่ (UC-IDP.01)</button>
+        <button class="dropdown-item" onclick="goToSlide(6)">7. เคสผู้เรียน 2: เข้าสู่ระบบ — ผู้เรียน (UC-IDP.02)</button>
+        <button class="dropdown-item" onclick="goToSlide(7)">8. เคสผู้เรียน 3: ปรับปรุงโปรไฟล์ผู้เรียน (UC-IDP.09)</button>
+        <button class="dropdown-item" onclick="goToSlide(8)">9. เคสผู้เรียน 4: ลืมรหัสผ่าน (UC-IDP.22)</button>
+        <button class="dropdown-item" onclick="goToSlide(9)">10. เคสผู้เรียน 5: ค้นหาและคัดกรองวิชาเรียน (UC-LMS.06)</button>
+        <button class="dropdown-item" onclick="goToSlide(10)">11. เคสผู้เรียน 6: สมัครเข้าเรียนในคอร์ส (UC-LMS.07)</button>
+        <button class="dropdown-item" onclick="goToSlide(11)">12. เคสผู้เรียน 7: เข้าเรียนหลักสูตร & ความคืบหน้า (UC-LMS.08)</button>
+        <button class="dropdown-item" onclick="goToSlide(12)">13. เคสผู้เรียน 8: ดูและส่งการบ้าน (UC-LMS.09)</button>
+        <button class="dropdown-item" onclick="goToSlide(13)">14. เคสผู้เรียน 9: ดูผลการเรียนและดาวน์โหลดใบประกาศ (UC-LMS.10)</button>
+        <button class="dropdown-item" onclick="goToSlide(14)">15. เคสผู้เรียน 10: เรียนเนื้อหาบทเรียน (UC-PLY.01)</button>
+        <button class="dropdown-item" onclick="goToSlide(15)">16. เคสผู้เรียน 11: ทำแบบทดสอบท้ายบท (UC-PLY.02)</button>
+        <button class="dropdown-item" onclick="goToSlide(16)">17. เคสผู้เรียน 12: ส่งคำตอบการบ้าน (UC-PLY.03)</button>
+        <button class="dropdown-item" onclick="goToSlide(17)">18. เคสผู้เรียน 13: กระดานสนทนาถามตอบ (UC-PLY.05)</button>
+        <button class="dropdown-item" onclick="goToSlide(18)">19. เคสผู้เรียน 14: ซื้อหลักสูตร (UC-BIL.01)</button>
+        <button class="dropdown-item" onclick="goToSlide(19)">20. เคสผู้เรียน 15: ต่ออายุสมาชิก (UC-BIL.03)</button>
+        <button class="dropdown-item" onclick="goToSlide(20)">21. เคสผู้เรียน 16: ตรวจสอบประวัติจ่ายเงิน (UC-BIL.04)</button>
+        <button class="dropdown-item" onclick="goToSlide(21)">22. เคสผู้เรียน 17: แจ้งเตือนในแอป (UC-NOT.03)</button>
+        <button class="dropdown-item" onclick="goToSlide(22)">23. เคสผู้เรียน 18: แดชบอร์ดสรุปความคืบหน้า (UC-ANL.01)</button>
+        <button class="dropdown-item" onclick="goToSlide(23)">24. เคสผู้สอน 1: สร้างบทเรียนและคอร์ส (UC-CCM.01)</button>
+        <button class="dropdown-item" onclick="goToSlide(24)">25. เคสผู้สอน 2: สร้างข้อสอบควิซ (UC-CCM.02)</button>
+        <button class="dropdown-item" onclick="goToSlide(25)">26. เคสผู้สอน 3: ยื่นขออนุมัติเผยแพร่ (UC-CCM.05)</button>
+        <button class="dropdown-item" onclick="goToSlide(26)">27. เคสผู้สอน 4: แดชบอร์ดผู้เรียน (UC-LMS.13)</button>
+        <button class="dropdown-item" onclick="goToSlide(27)">28. เคสผู้สอน 5: ตรวจงานการบ้าน (UC-LMS.05)</button>
+        <button class="dropdown-item" onclick="goToSlide(28)">29. เคสผู้สอน 6: จัดการกลุ่มชั้นเรียน (UC-LMS.04)</button>
+        <button class="dropdown-item" onclick="goToSlide(29)">30. เคสแอดมินสถาบัน 1: นำเข้าไฟล์รายชื่อนักเรียน (UC-IDP.06)</button>
+        <button class="dropdown-item" onclick="goToSlide(30)">31. เคสแอดมินสถาบัน 2: เชิญบัญชีครูผู้สอน (UC-IDP.04)</button>
+        <button class="dropdown-item" onclick="goToSlide(31)">32. เคสแอดมินสถาบัน 3: อนุมัติหลักสูตร (UC-CCM.06)</button>
+        <button class="dropdown-item" onclick="goToSlide(32)">33. เคสแอดมินสถาบัน 4: ตั้งราคาและประเภทคอร์ส (UC-LMS.11)</button>
+        <button class="dropdown-item" onclick="goToSlide(33)">34. เคสแอดมินสถาบัน 5: ส่งออกรายงานธุรกรรมการเงิน (UC-BIL.05)</button>
+        <button class="dropdown-item" onclick="goToSlide(34)">35. เคสแอดมินสถาบัน 6: สรุปวิเคราะห์ระดับวิทยาลัย (UC-ANL.06)</button>
+        <button class="dropdown-item" onclick="goToSlide(35)">36. เคสแอดมินระบบ 1: ตั้งค่าระบบหลัก (UC-ADM.01)</button>
+        <button class="dropdown-item" onclick="goToSlide(36)">37. เคสแอดมินระบบ 2: จัดการบัญชีแอดมินสถาบัน (UC-IDP.14)</button>
+        <button class="dropdown-item" onclick="goToSlide(37)">38. เคสแอดมินระบบ 3: ตรวจสอบบันทึกความปลอดภัย (UC-IDP.21)</button>
+        <button class="dropdown-item" onclick="goToSlide(38)">39. เคสแอดมินระบบ 4: ตรวจรายงานแจ้งเตือน (UC-NOT.01)</button>
+        <button class="dropdown-item" onclick="goToSlide(39)">40. เคสแอดมินระบบ 5: จัดการข้อมูลวิทยาลัย (UC-IDP.23)</button>
+        <button class="dropdown-item" onclick="goToSlide(40)">41. การสรุปผล UAT</button>
+        <button class="dropdown-item" onclick="goToSlide(41)">42. เสร็จสิ้นการรีวิว & ขั้นตอนถัดไป</button>
       </div>
     </div>
   </div>
@@ -1059,20 +1071,20 @@
       </div>
     </div>
 
-    <!-- Slide 6: Student Case 1 - Register -->
+        <!-- Slide 6: Student Case 1 - Register as Learner -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
-          <h2 class="slide-title">5. เคสที่ 1: สมัครสมาชิกใหม่</h2>
+          <h2 class="slide-title">5. เคสผู้เรียน 1: สมัครสมาชิกใหม่</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.01 - Register as Learner</h3>
           <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
-            <li>กดเลือกสถานการณ์ <b>Happy Path / Main Flow</b> บนแถบจำลองด้านบนของต้นแบบ</li>
+            <li>กดเลือกสถานการณ์ <b>Happy Path / Main Flow</b> บนแถบจำลองด้านบนสุด</li>
             <li>กรอกเบอร์โทรศัพท์มือถือ เพื่อทดสอบระบบส่งรหัส OTP จำลอง</li>
             <li>กรอกรหัส OTP จำลอง (เช่น <b>123456</b>) เพื่อผ่านขั้นตอนความปลอดภัย</li>
-            <li>ป้อนข้อมูลส่วนตัว (ชื่อเล่น, เพศ, วันเกิด) และสถาบันการศึกษาเพื่อเริ่มสร้างโปรไฟล์ผู้เรียน</li>
+            <li>ป้อนข้อมูลส่วนตัว (ชื่อเล่น, เพศ, วันเกิด) และเลือกสถาบันการศึกษาเพื่อจำลองการสร้างโปรไฟล์ผู้เรียนครั้งแรก</li>
           </ul>
           
           <!-- Interactive Scenario Selector -->
@@ -1082,18 +1094,18 @@
               <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
             </div>
             <div class="scenario-buttons">
-              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: User selects Other (External Learner)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.3A')"><b>AF-2A.3A</b>: External Learner selects Mobile OTP</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.3B')"><b>AF-2A.3B</b>: External Learner selects Google SSO</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.5A')"><b>AF-2A.5A</b>: Email / Mobile already registered</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.7C')"><b>AF-2A.7C</b>: OTP — change auth method (External)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Student ID not found in roster</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: User clicks Back on Login Method Selection</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9B')"><b>AF-9B</b>: TVET selects Google SSO as login method</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-11A')"><b>AF-11A</b>: Password and confirm password do not match</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-12A')"><b>AF-12A</b>: External Learner — Complete Profile editable form</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-14A')"><b>AF-14A</b>: Mobile app — offer to set a PIN (optional)</button>
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ผู้เรียนทั่วไปเลือก 'บุคคลภายนอก' (Other)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.3A')"><b>AF-2A.3A</b>: บุคคลภายนอกเลือกล็อกอินด้วย Mobile OTP</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.3B')"><b>AF-2A.3B</b>: บุคคลภายนอกเลือกล็อกอินด้วย Google SSO</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.5A')"><b>AF-2A.5A</b>: อีเมลหรือเบอร์มือถือนี้มีผู้สมัครในระบบแล้ว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.7C')"><b>AF-2A.7C</b>: เปลี่ยนช่องทางยืนยันตัวตนระหว่างรับ OTP</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: ไม่พบรหัสนักศึกษาในระบบของสถาบัน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: กดปุ่มย้อนกลับที่หน้าเลือกวิธียืนยันตัวตน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9B')"><b>AF-9B</b>: สมัครสมาชิกด้วย Google SSO แทนวิธีกรอกปกติ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-11A')"><b>AF-11A</b>: รหัสผ่านและรหัสผ่านยืนยันไม่ตรงกัน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-12A')"><b>AF-12A</b>: บุคคลภายนอกแก้ไขประวัติข้อมูลทั่วไปเพิ่มเติม</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-14A')"><b>AF-14A</b>: จำลองขั้นตอนกำหนดรหัส PIN 6 หลักบนแอปมือถือ</button>
               <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
                 <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
               </button>
@@ -1104,7 +1116,7 @@
             <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
             <div class="alert-content">
               <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
-              <p style="font-size:0.8rem; line-height: 1.4;">แบบฟอร์มการกรอกใช้งานง่ายและสับสนไหม? คำอธิบายภาษาลาวถูกต้องและอ่านเข้าใจง่ายหรือไม่?</p>
+              <p style="font-size:0.8rem; line-height: 1.4;">แบบฟอร์มการสมัครสมาชิกและขั้นตอนการยืนยันรหัส OTP จำลองใช้งานง่ายและอธิบายได้เข้าใจดีหรือไม่?</p>
             </div>
           </div>
         </div>
@@ -1127,19 +1139,19 @@
       </div>
     </div>
 
-    <!-- Slide 7: Student Case 2 - Login -->
+    <!-- Slide 7: Student Case 2 - Login — Learner -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
-          <h2 class="slide-title">6. เคสที่ 2: เข้าใช้ระบบและตั้ง PIN</h2>
+          <h2 class="slide-title">6. เคสผู้เรียน 2: เข้าสู่ระบบ — ผู้เรียน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.02 - Login — Learner</h3>
           <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
-            <li>เลือกสถานการณ์ <b>Main Flow</b> เพื่อทดสอบล็อกอินด้วยเบอร์มือถือ/อีเมลรับ OTP</li>
-            <li>ทดลองการเข้าใช้งานด้วยรหัส <b>PIN 6 หลัก</b> เพื่อความสะดวกในการเข้าใช้งานด่วน</li>
-            <li>หรือทดลองเข้าใช้งานผ่าน <b>Google SSO</b> จำลองระบบลงชื่อเข้าใช้อัตโนมัติ</li>
+            <li>เลือกสถานการณ์ <b>Happy Path / Main Flow</b> บนแถบจำลอง</li>
+            <li>ทดลองป้อนชื่อบัญชีผู้ใช้ (เบอร์โทรศัพท์หรืออีเมล) เพื่อรับรหัส OTP ล็อกอิน</li>
+            <li>หรือสลับกดเข้าใช้งานด้วยรหัส <b>PIN 6 หลัก</b> เพื่อความสะดวกในการใช้งานด่วน</li>
           </ul>
           
           <!-- Interactive Scenario Selector -->
@@ -1149,16 +1161,16 @@
               <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
             </div>
             <div class="scenario-buttons">
-              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: User selects Sign in with Google</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.2A')"><b>AF-2A.2A</b>: Google SSO unavailable — error shown on login screen</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Account not found (opens Account Not Found dialog)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: Wrong password — not yet locked (inline error)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3C')"><b>AF-3C</b>: Password wrong 5× — account locked (lockout timer)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3D')"><b>AF-3D</b>: Account suspended or revoked (opens Suspended dialog)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: PIN detected on device — show PIN Login screen</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A.3A')"><b>AF-1A.3A</b>: PIN wrong — under 5 attempts</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A.3B')"><b>AF-1A.3B</b>: PIN wrong 5× or already locked — fallback to password</button>
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ลงชื่อเข้าใช้ด้วยบัญชี Google SSO</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.2A')"><b>AF-2A.2A</b>: ระบบ Google SSO ขัดข้องชั่วคราว แสดงคำเตือนผิดพลาด</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: ไม่พบบัญชีผู้ใช้งานที่ระบุในระบบ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: ป้อนรหัสผ่านไม่ถูกต้อง (แสดงข้อความแจ้งข้อผิดพลาด)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3C')"><b>AF-3C</b>: ป้อนรหัสผ่านผิดครบ 5 ครั้งและบัญชีถูกระงับชั่วคราว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3D')"><b>AF-3D</b>: บัญชีผู้ใช้นี้ถูกยกเลิกการใช้งานหรือถูกสั่งระงับสิทธิ์</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: ระบบตรวจพบการตั้งรหัส PIN และสลับแสดงหน้าป้อน PIN</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A.3A')"><b>AF-1A.3A</b>: ป้อนรหัส PIN ผิด (ใช้งานป้อนได้ต่ำกว่า 5 ครั้ง)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A.3B')"><b>AF-1A.3B</b>: ป้อน PIN ผิดครบ 5 ครั้ง บังคับให้กลับไปใช้รหัสผ่าน</button>
               <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
                 <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
               </button>
@@ -1169,7 +1181,7 @@
             <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
             <div class="alert-content">
               <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
-              <p style="font-size:0.8rem; line-height: 1.4;">ปุ่มแป้นกดรหัส PIN ใช้งานสะดวกหรือไม่? การตอบสนองรวดเร็วและปลอดภัยตามการใช้งานจริงไหม?</p>
+              <p style="font-size:0.8rem; line-height: 1.4;">การตอบสนองและหน้าต่างแสดงความผิดพลาดเมื่อล็อกอินล้มเหลวมีความชัดเจนและไม่สับสนใช่หรือไม่?</p>
             </div>
           </div>
         </div>
@@ -1192,19 +1204,19 @@
       </div>
     </div>
 
-    <!-- Slide 8: Student Case 3 - Browse Course -->
+    <!-- Slide 8: Student Case 3 - Update Learner Profile -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
-          <h2 class="slide-title">7. เคสที่ 3: ค้นหาและคัดกรองวิชาเรียน</h2>
+          <h2 class="slide-title">7. เคสผู้เรียน 3: ปรับปรุงโปรไฟล์ผู้เรียน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
-          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.06 - Browse Course Catalog</h3>
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.09 - Update Learner Profile</h3>
           <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
-            <li>เปิดหน้าหลักแคตตาล็อกวิชาเรียน (Course Catalog)</li>
-            <li>ทดลองค้นหาชื่อหลักสูตรวิชาในช่องการค้นหา (Search Box)</li>
-            <li>ทดสอบคัดกรองหลักสูตร (Filter) แยกตามระดับความยากและระยะเวลาวิชา</li>
+            <li>กดเข้าเมนูจัดการบัญชีส่วนตัวและเลือกหน้าแก้ไขโปรไฟล์ (`/update-learner-profile`)</li>
+            <li>ทดลองอัปเดตรูปภาพโปรไฟล์ ชื่อเล่น เพศ วันเกิด และสถาบันต้นสังกัด</li>
+            <li>กดยืนยันเซฟความเปลี่ยนแปลง และสังเกตการบันทึกแก้ไขข้อมูล</li>
           </ul>
           
           <!-- Interactive Scenario Selector -->
@@ -1214,13 +1226,19 @@
               <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
             </div>
             <div class="scenario-buttons">
-              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: Enrolled, awaiting instructor approval for cohort</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: Enrolled, approved, ready to learn</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: No results after search</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: No results after tag filter</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9A')"><b>AF-9A</b>: ผู้เยี่ยมชมกดการ์ด — ดูรายละเอียดได้แต่ต้องล็อกอินเพื่อลงทะเบียน</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10A')"><b>AF-10A</b>: Course or Specialization clicked has been withdrawn</button>
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ผู้เรียนแก้ไขข้อมูลอีเมลของตนเอง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.1A')"><b>AF-2A.1A</b>: อีเมลใหม่ซ้ำซ้อนกับบัญชีอื่นในระบบ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.2A')"><b>AF-2A.2A</b>: ป้อนรหัสยืนยันอีเมลใหม่ (OTP) ไม่ถูกต้อง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.2B')"><b>AF-2A.2B</b>: รหัส OTP ยืนยันอีเมลหมดอายุก่อนป้อนสำเร็จ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A.2C')"><b>AF-2A.2C</b>: ป้อน OTP ผิดครบ 5 ครั้ง บัญชีถูกล็อกชั่วคราว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: ผู้เรียนแก้ไขข้อมูลเบอร์โทรศัพท์ของตนเอง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B.1A')"><b>AF-2B.1A</b>: เบอร์โทรศัพท์ใหม่ซ้ำซ้อนกับบัญชีอื่นในระบบ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B.1B')"><b>AF-2B.1B</b>: ช่องทาง SMS ไม่สามารถส่ง OTP ไปที่เบอร์ใหม่ได้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B.2A')"><b>AF-2B.2A</b>: ป้อนรหัสยืนยันเบอร์ใหม่ (OTP) ไม่ถูกต้อง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B.2B')"><b>AF-2B.2B</b>: รหัส OTP ยืนยันเบอร์ใหม่หมดอายุ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B.2C')"><b>AF-2B.2C</b>: ป้อน OTP เบอร์ใหม่ผิดครบ 5 ครั้ง บัญชีถูกล็อก</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: รหัสนักเรียนหรือโรงเรียนไม่ตรงตามฐานข้อมูลสถาบัน</button>
               <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
                 <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
               </button>
@@ -1231,7 +1249,135 @@
             <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
             <div class="alert-content">
               <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
-              <p style="font-size:0.8rem; line-height: 1.4;">การแสดงผลรายชื่อหลักสูตรมีความสวยงาม ค้นหาและจัดเรียงได้รวดเร็วตามความต้องการหรือไม่?</p>
+              <p style="font-size:0.8rem; line-height: 1.4;">ขั้นตอนแก้ไขข้อมูลและการสลับอีเมลหรือเบอร์มือถือด้วยระบบความปลอดภัยมีความยืดหยุ่นดีหรือไม่?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/update-learner-profile</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/update-learner-profile" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9: Student Case 4 - Forgot Password -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">8. เคสผู้เรียน 4: ลืมรหัสผ่าน</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.22 - Forgot Password</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>กดที่เมนู 'ลืมรหัสผ่าน' หน้าล็อกอิน เพื่อเปิดระบบกู้คืนรหัสผ่าน</li>
+            <li>กรอกช่องทางการติดต่อ (อีเมล/เบอร์โทรศัพท์) เพื่อขอรับรหัสผ่านหรือรหัส OTP</li>
+            <li>กรอกรหัส OTP และตั้งค่ารหัสผ่านใหม่ตามเกณฑ์ความปลอดภัยของแพลตฟอร์ม</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: ไม่พบบัญชีผู้ใช้เชื่อมโยงกับที่ป้อนเข้ามา</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: บัญชีนี้ใช้งาน Google SSO เท่านั้น (กู้รหัสผ่านไม่ได้)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4C')"><b>AF-4C</b>: บัญชีที่ระบุถูกระงับสิทธิ์การใช้งานถาวร</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: ระบบเครือข่ายล้มเหลว ส่งรหัส OTP ทางอีเมล/SMS ไม่ได้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A')"><b>AF-6A</b>: ป้อนรหัส OTP กู้รหัสไม่ถูกต้อง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A.2B')"><b>AF-6A.2B</b>: ผู้ใช้กดร้องขอรหัส OTP ชุดใหม่ซ้ำอีกรอบ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A.2C')"><b>AF-6A.2C</b>: เปลี่ยนช่องทางส่งรับ OTP ระหว่างดำเนินการ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6B')"><b>AF-6B</b>: รหัส OTP หมดอายุการใช้งาน (จำกัดเวลา 5 นาที)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6C')"><b>AF-6C</b>: กรอก OTP ผิดครบ 5 ครั้ง บล็อกช่องทางการส่งชั่วคราว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: รหัสผ่านใหม่ป้อนสั้นเกินไปหรือไม่ตรงเกณฑ์ความปลอดภัย</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">คำเตือนแสดงความซับซ้อนของรหัสผ่านและความง่ายในการขอรหัสผ่านใหม่ช่วยให้ทำตามขั้นตอนได้ดีหรือไม่?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/forgot-password</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/forgot-password" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10: Student Case 5 - Browse Course Catalog -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">9. เคสผู้เรียน 5: ค้นหาและคัดกรองวิชาเรียน</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.06 - Browse Course Catalog</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>เปิดหน้าสารบัญรวมวิชาเรียนทั้งหมด (Course Catalog)</li>
+            <li>พิมพ์ชื่อวิชาลงในกล่องค้นหาเพื่อตรวจสอบการแสดงผล</li>
+            <li>คลิกปุ่มกรอง (Filter) เพื่อแยกดูตามระดับความยาก ป้ายความรู้ หรือระยะเวลาวิชา</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: วิชาเรียนสมัครเรียบร้อยแล้ว แต่อยู่ระหว่างรอครูผู้สอนอนุมัติกลุ่มรุ่นเรียน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: วิชาเรียนอนุมัติเรียบร้อย ปุ่มเปลี่ยนเป็น 'เข้าเรียน' ทันที</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: พิมพ์ค้นหาชื่อหลักสูตรวิชาแล้วไม่พบข้อมูลใดๆ (No results)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: กรองข้อมูลด้วยป้ายคำค้นหาแล้วไม่พบวิชาตรงตามป้ายตัวกรอง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9A')"><b>AF-9A</b>: ผู้เยี่ยมชมทั่วไปกดเข้ามาดูข้อมูลหลักสูตร (บังคับล็อกอินเพื่อสมัครเรียน)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-10A')"><b>AF-10A</b>: วิชาเรียนหรือกลุ่มเฉพาะทางนั้นถูกนำออกจากสารบัญแล้ว</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">หน้าจอแคตตาล็อกการจัดวางวิชาเรียน การกรองแบ่งประเภท และการค้นหามีความสวยงามเป็นสัดส่วนดีไหม?</p>
             </div>
           </div>
         </div>
@@ -1254,19 +1400,19 @@
       </div>
     </div>
 
-    <!-- Slide 9: Student Case 4 - Take Lesson -->
+    <!-- Slide 11: Student Case 6 - Enroll in Course -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
-          <h2 class="slide-title">8. เคสที่ 4: เข้าเรียนหลักสูตร & ความคืบหน้า</h2>
+          <h2 class="slide-title">10. เคสผู้เรียน 6: สมัครเข้าเรียนในคอร์ส</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
-          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.08 - Take Lesson & Track Progress</h3>
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.07 - Enroll in Course</h3>
           <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
-            <li>กดปุ่มลงทะเบียนเข้าเรียนในหลักสูตรทั่วไปเพื่อเปิดหน้าต่างเล่นบทเรียน</li>
-            <li>ทดลองคลิกเรียนในแต่ละบทวิชาเพื่อดูวิดีโอ เอกสาร PDF หรือเนื้อหาการสอน</li>
-            <li>ตรวจสอบแถบเปอร์เซ็นต์สะสมความคืบหน้าการเรียนรู้ส่วนตัว (Progress Bar)</li>
+            <li>กดเข้าไปดูรายละเอียดวิชาเรียนที่สนใจศึกษา</li>
+            <li>คลิกปุ่มสมัครเข้าเรียน (Enroll / Register) บนหน้าจอ</li>
+            <li>สังเกตหน้าจอยืนยันการลงเรียนเสร็จสิ้น (Enrollment Confirmation)</li>
           </ul>
           
           <!-- Interactive Scenario Selector -->
@@ -1276,19 +1422,14 @@
               <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
             </div>
             <div class="scenario-buttons">
-              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: Not enrolled in any course yet</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Learner selects Assignment tab</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: Learner selects Forum tab</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: Course removed from catalog after enrollment</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: Course content unavailable (critical error)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A')"><b>AF-6A</b>: Selected lesson is not yet accessible</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: Learner opens Discussion Board in Course Player</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7B')"><b>AF-7B</b>: Selected lesson is an assignment</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: Course completion criteria met</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Course removed from catalog after enrollment</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: เนื้อหาคอร์สไม่พร้อมใช้งาน (ข้อผิดพลาดร้ายแรง)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-5A')"><b>AF-5A</b>: Selected lesson is not yet accessible</button>
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow (คอร์สฟรีเรียนได้ทันที)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: แพ็คเกจสมาชิกผู้ใช้งานหมดอายุ (เปิดให้ไปต่ออายุรายเดือน/ปี)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: สมาชิกทั่วไปกดเรียนคอร์สเสียเงินเฉพาะทาง (ส่งไปหน้าซื้อคอร์สแยก)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: หมดเขตระยะเวลาเปิดลงทะเบียนของรุ่นชั้นเรียน (Cohort) แล้ว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: ยอดสมัครสมาชิกของกลุ่มเรียนในรุ่นนี้เต็มโควตาจำกัดแล้ว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: สมัครรุ่นเรียนที่ต้องตรวจสิทธิ์ แสดงสถานะรอนุมัติ (Pending)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: ผู้สอนอนุมัติกลุ่มเรียนเรียบร้อย สิทธิ์เข้าเรียนเปิดทำงาน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A')"><b>AF-6A</b>: เกิดข้อผิดพลาดในการเชื่อมต่อฐานข้อมูลขณะบันทึกการสมัคร</button>
               <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
                 <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
               </button>
@@ -1299,7 +1440,72 @@
             <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
             <div class="alert-content">
               <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
-              <p style="font-size:0.8rem; line-height: 1.4;">แถบสะสมเปอร์เซ็นต์มีการคำนวณและอัปเดตตรงตามสัดส่วนเนื้อหาที่คุณเปิดเรียนค้างไว้จริงไหม?</p>
+              <p style="font-size:0.8rem; line-height: 1.4;">ปุ่มขั้นตอนการกดสมัคร การเลือกประเภทเรียน และเงื่อนไขการเข้าเรียนอธิบายได้ครอบคลุมดีไหม?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/enroll-in-course</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/enroll-in-course" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 12: Student Case 7 - Take Lesson and Track Progress -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">11. เคสผู้เรียน 7: เข้าเรียนหลักสูตร & ความคืบหน้า</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.08 - Take Lesson and Track Progress</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>กดสมัครเรียนวิชาเรียนตัวอย่าง และกดปุ่มเริ่มเข้าเรียนบทเรียน</li>
+            <li>ตรวจสอบตารางโครงสร้างบทเรียน สารบัญโมดูล และเอกสารแนบ</li>
+            <li>สังเกตแถบบ่งบอกความก้าวหน้าการสะสมคะแนนเรียนรู้ (Progress Bar) ด้านข้าง</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: ผู้เรียนยังไม่มีคอร์สวิชาเรียนใดๆ แสดงการแนะนำแคตตาล็อก</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: คลิกเปลี่ยนไปยังแท็บ 'การบ้านประจำบท' (Assignment)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: คลิกเปลี่ยนไปยังแท็บ 'กระดานถามตอบ' (Discussion Forum)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: หลักสูตรดังกล่าวถูกถอนออกจากระบบหลังสมัครสมาชิกแล้ว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4B')"><b>AF-4B</b>: ข้อมูลเนื้อหาหลักสูตรเกิดความขัดข้องทางระบบ โหลดเนื้อหาไม่ได้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-6A')"><b>AF-6A</b>: บทเรียนถัดไปถูกล็อกไว้จนกว่าจะถึงเวลาที่ผู้สอนกำหนดไว้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: เปิดหน้าบอร์ดฟอรัมย่อยซ้อนภายในหน้าเล่นเครื่องเล่นบทเรียน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7B')"><b>AF-7B</b>: เนื้อหารายการบทเรียนย่อยที่เลือกคือใบงานการบ้าน (Assignment)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: เรียนผ่านครบเกณฑ์สำเร็จการศึกษาหลักสูตร ปลดล็อกการดาวน์โหลดใบเซอร์</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">การสลับเปลี่ยนหน้าบทเรียน เมนูแสดงความก้าวหน้าร้อยละ และการสลับแท็บมีความรวดเร็วและเป็นสัดส่วนดีไหม?</p>
             </div>
           </div>
         </div>
@@ -1322,19 +1528,19 @@
       </div>
     </div>
 
-    <!-- Slide 10: Student Case 5 - Take Quiz -->
+    <!-- Slide 13: Student Case 8 - View and Submit Assignment -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
-          <h2 class="slide-title">9. เคสที่ 5: การทำควิซทบทวนความรู้</h2>
+          <h2 class="slide-title">12. เคสผู้เรียน 8: ดูและส่งการบ้าน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
-          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-PLY.02 - Take Quiz</h3>
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.09 - View and Submit Assignment</h3>
           <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
-            <li>เปิดเข้าหน้าต่างทำข้อสอบเก็บคะแนนจำลอง (Quiz) ท้ายบทเรียน</li>
-            <li>ทำแบบทดสอบแบบตัวเลือกตอบปรนัย (MCQ) หรือโจทย์ประเภท ถูก-ผิด</li>
-            <li>กดยืนยันการส่งกระดาษคำตอบ (Submit) เพื่อตรวจสอบการแสดงผลเกรด</li>
+            <li>เปิดแถบการบ้านภายในตัววิชาเรียน (Assignment Tab)</li>
+            <li>ตรวจสอบโจทย์การบ้านที่ได้รับมอบหมาย วันกำหนดส่ง และคะณฑ์ประเมิน</li>
+            <li>กดปุ่มส่งรายงานการบ้าน (Submit) เพื่อเริ่มทำแบบฟอร์มอัปโหลด</li>
           </ul>
           
           <!-- Interactive Scenario Selector -->
@@ -1344,17 +1550,13 @@
               <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
             </div>
             <div class="scenario-buttons">
-              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Resume an in-progress attempt</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: Max attempts reached — view past result</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-11A')"><b>AF-11A</b>: Timer expires — system auto-submits</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-12A')"><b>AF-12A</b>: Submit with unanswered questions — warning</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-16A')"><b>AF-16A</b>: Learner retakes after seeing result</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-16B')"><b>AF-16B</b>: Max attempts exhausted — result read-only</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: Connection lost during quiz</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7B')"><b>AF-7B</b>: Learner exits before submitting</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: Learner revises a previously answered question</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-17A')"><b>AF-17A</b>: Resume from a different device</button>
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: โมดูลบทเรียนนี้ไม่มีใบงานการบ้านกำหนดไว้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: เปิดหน้าใบงานการบ้านที่ส่งเรียบร้อยแล้ว (แสดงข้อมูลเพื่ออ่านอย่างเดียว)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: ใบงานได้รับการประเมินเกรดจากครูผู้สอนแล้ว แสดงความเห็นและผลคะแนน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: หมดกำหนดเวลาส่งงานตามดีดไลน์ ปุ่มส่งถูกปิดการใช้งาน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: ส่งการบ้านล่าช้าเกินเวลาที่กำหนด (ส่งได้แต่โดนหักคะแนนตามเกณฑ์)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: อัปโหลดไฟล์แนบการบ้านมีขนาดใหญ่เกินกว่าที่ระบบระบุไว้</button>
               <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
                 <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
               </button>
@@ -1365,7 +1567,195 @@
             <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
             <div class="alert-content">
               <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
-              <p style="font-size:0.8rem; line-height: 1.4;">หน้าจอตรวจคำตอบมีผลการอธิบายเฉลยที่เข้าใจง่าย มีสีสันหรือไอคอนสื่อสารชัดเจนหรือไม่?</p>
+              <p style="font-size:0.8rem; line-height: 1.4;">เกณฑ์ประเมินการตรวจงาน คะแนน และรายละเอียดเวลาดีดไลน์มีความชัดเจนสะดุดตาดีหรือไม่?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/submit-assignment</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/submit-assignment" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 14: Student Case 9 - View Grade Result and Certificate -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">13. เคสผู้เรียน 9: ดูผลการเรียนและดาวน์โหลดใบประกาศ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.10 - View Grade Result and Certificate</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>เข้าหน้าแสดงประวัติผลการเรียนทั้งหมดและใบรับรองส่วนตัว</li>
+            <li>คลิกดูรายงานใบรับรองจำลอง (Certificate Preview) บนสไลด์ขวา</li>
+            <li>ทดสอบกดดาวน์โหลดไฟล์รูปภาพหรือ PDF ใบรับรองออกสู่เครื่อง</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: วิชานี้ยังสอบเก็บคะแนนไม่ครบตามเกณฑ์ ใบรับรองยังถูกล็อกอยู่</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1B')"><b>AF-1B</b>: สอบผ่านตามเกณฑ์แล้ว แต่อยู่ระหว่างการอนุมัติและออกไฟล์ใบประกาศ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ผู้ใช้พึ่งสมัครเรียนใหม่และยังไม่มีประวัติใบประกาศเกียรติคุณใดๆ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: ตัวสร้าง PDF เกิดข้อผิดพลาด ทำให้พรีวิวและดาวน์โหลดเอกสารไม่ได้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: ผู้ใช้กดปุ่มแชร์แอดเดรสของใบประกาศส่งต่อไปยังโซเชียลมีเดีย</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">รูปแบบดีไซน์ของเอกสารรับรองความรู้ (ใบเซอร์) มีความน่าเชื่อถือ สวยงาม และแสดงข้อมูลครบถ้วนไหม?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/view-grade-result-and-certificate</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/view-grade-result-and-certificate" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 15: Student Case 10 - Consume Lesson -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">14. เคสผู้เรียน 10: เรียนเนื้อหาบทเรียน</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-PLY.01 - Consume Lesson</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>เปิดเครื่องเล่นบทเรียนย่อยประเภทต่างๆ (เอกสาร วิดีโอ หรือลิงก์ภายนอก)</li>
+            <li>กรณีเป็นไฟล์เอกสาร กดกดยืนยันการอ่านเสร็จสิ้น (Mark as Completed)</li>
+            <li>กรณีสื่อ SCORM หรือวิดีโอ สังเกตการบันทึกเปอร์เซ็นต์สะสมโดยอัตโนมัติ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: เนื้อหานี้ถูกล็อกไว้เนื่องจากโมดูลก่อนหน้ายังเรียนไม่จบ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: เนื้อหานี้ถูกล็อกเนื่องจากผู้เรียนยังสอบควิซบังคับของโมดูลนี้ไม่ผ่าน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3C')"><b>AF-3C</b>: สิทธิ์การเข้าชั้นเรียนหมดอายุลงระหว่างกำลังเปิดเนื้อหาค้างไว้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3D')"><b>AF-3D</b>: ไฟล์แนบบทเรียนมีปัญหา ไม่สามารถโหลดเนื้อหามาแสดงได้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: ผู้เรียนกดปิดหน้าเนื้อหานี้ไป ก่อนจะเรียนจบเกณฑ์ที่กำหนดไว้</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">เครื่องเล่นวิชาเรียนรองรับไฟล์ได้หลากหลายและมีการเตือนเงื่อนไขการล็อกบทเรียนที่เด่นชัดดีไหม?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/consume-lesson</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/consume-lesson" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 16: Student Case 11 - Take Quiz -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">15. เคสผู้เรียน 11: ทำแบบทดสอบท้ายบท</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-PLY.02 - Take Quiz</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>กดปุ่มเริ่มทำควิซแบบทดสอบย่อยที่มีการจับเวลาจำลอง</li>
+            <li>เลือกป้อนคำตอบปรนัย (MCQ) หรือถูก-ผิดให้ครบทุกข้อ</li>
+            <li>กดยืนยันส่งข้อสอบ (Submit) เพื่อเข้าสู่หน้ารายงานคะแนนและเฉลยความผิดพลาด</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: กู้คืนสถานะการทำควิซที่ค้างไว้หลังสายหลุดหรือเน็ตดับ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: ทำจำนวนครั้งการสอบถึงเกณฑ์สูงสุดจำกัดแล้ว (ไม่ให้เข้าสอบใหม่)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: การเชื่อมต่อขัดข้องระหว่างทำข้อสอบ (บันทึกคำตอบปัจจุบันไว้)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7B')"><b>AF-7B</b>: ผู้เรียนปิดหน้าจอไปกลางคันหรือเซสชันหมดอายุการยืนยันตัวตน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: ผู้เรียนกลับมากดแก้ไขคำตอบที่ได้ป้อนตอบไปแล้วก่อนหน้า</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-11A')"><b>AF-11A</b>: เวลาทำข้อสอบหมดลง ระบบส่งข้อสอบและคำตอบปัจจุบันโดยอัตโนมัติ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-12A')"><b>AF-12A</b>: กดยืนยันส่งข้อสอบโดยที่ยังกรอกข้อสอบไม่ครบ (แสดงกล่องเตือน)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-16A')"><b>AF-16A</b>: กดเริ่มทำควิซใหม่อีกรอบเพื่อปรับปรุงผลคะแนนของตน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-16B')"><b>AF-16B</b>: ทำข้อสอบผิดพลาดตกหลายครั้งจนสิทธิ์สุ่มสอบปิดล็อกถาวร</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-17A')"><b>AF-17A</b>: เปิดทำข้อสอบต่อเนื่องผ่านอุปกรณ์เครื่องอื่นย้อนหลัง</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">เครื่องมือนับถอยหลังเวลาเตือนสอบ และหน้าจออธิบายผลสอบเฉลยข้อมูลง่ายต่อการทบทวนไหม?</p>
             </div>
           </div>
         </div>
@@ -1388,19 +1778,19 @@
       </div>
     </div>
 
-    <!-- Slide 11: Student Case 6 - Purchase Course -->
+    <!-- Slide 17: Student Case 12 - Submit Assignment Response -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
-          <h2 class="slide-title">10. เคสที่ 6: การซื้อหลักสูตรชำระเงินจำลอง</h2>
+          <h2 class="slide-title">16. เคสผู้เรียน 12: ส่งคำตอบการบ้าน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
-          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-BIL.01 - Purchase Course</h3>
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-PLY.03 - Submit Assignment Response</h3>
           <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
-            <li>เลือกสมัครหลักสูตรประเภทที่กำหนดค่าธรรมเนียมการเรียน (Paid Course)</li>
-            <li>กดสั่งซื้อ (Purchase) และระบุการชำระเงินผ่านระบบธนาคารจำลอง BCEL One</li>
-            <li>สแกนชำระเงินผ่านคิวอาร์โค้ด และตรวจสอบการอนุมัติสิทธิ์เข้าเรียนอัตโนมัติ</li>
+            <li>เปิดหน้าส่งการบ้านประเภทแนบไฟล์หรือเขียนบรรยายคำตอบ</li>
+            <li>ทดลองลากและวางอัปโหลดไฟล์ หรือพิมพ์เนื้อความคำตอบลงกล่องข้อความ</li>
+            <li>กดยืนยันการส่งการบ้าน (Submit) และรอเข้าสถานะรอกลั่นกรอง</li>
           </ul>
           
           <!-- Interactive Scenario Selector -->
@@ -1410,13 +1800,14 @@
               <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
             </div>
             <div class="scenario-buttons">
-              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> Happy Path / Main Flow</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: No products available for this course</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1B')"><b>AF-1B</b>: Learner already has access to this course</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: Learner cancels before payment</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: Payment failed (declined / timed out / verification failed)</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3C')"><b>AF-3C</b>: Learner receives course access during the payment process</button>
-              <button class="btn-scenario" onclick="changeIframeScenario(this, 'cohost')"><b>cohost</b>: Success — cohost course (Start → Enrollment Confirmation SCR-LMS.05)</button>
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow (ส่งสำเร็จ รอกรรมการตรวจ)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: พิมพ์ข้อความยาวเกินพิกัดจำนวนคำที่ครูกำหนดจำกัดไว้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7A')"><b>AF-7A</b>: อัปโหลดไฟล์แนบนามสกุลไม่รองรับ หรือมีขนาดใหญ่เกินข้อกำหนด</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7B')"><b>AF-7B</b>: สัญญาณเชื่อมต่ออินเทอร์เน็ตหลุดระหว่างกำลังอัปโหลดไฟล์ข้อมูล</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-7C')"><b>AF-7C</b>: กดปุ่มบันทึกงานเป็นร่างชั่วคราว (Draft Saved) เพื่อกลับมาทำต่อ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-8A')"><b>AF-8A</b>: เปิดไฟล์ร่างเดิมเพื่อป้อนคำตอบแก้ไขเพิ่มเติมก่อนกดยื่นส่งจริง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9A')"><b>AF-9A</b>: การบ้านตรวจคะแนนเรียบร้อยแล้ว ห้ามเปิดยื่นส่งใบงานซ้ำอีกรอบ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-9B')"><b>AF-9B</b>: ผู้เรียนสามารถกดดูใบตรวจคะแนน ข้อคิดเห็น และรูบริกคะแนนจากครู</button>
               <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
                 <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
               </button>
@@ -1427,7 +1818,131 @@
             <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
             <div class="alert-content">
               <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
-              <p style="font-size:0.8rem; line-height: 1.4;">ความลื่นไหลในระบบชำระเงินจำลองเข้าใจง่ายหรือไม่? หน้าจอชำระเงินสำเร็จแสดงผลชัดเจนเพียงใด?</p>
+              <p style="font-size:0.8rem; line-height: 1.4;">ฟังก์ชันการอัปโหลดไฟล์แสดงผลเปอร์เซ็นต์โหลดชัดเจน และกล่องแสดงคำวิจารณ์ของครูอ่านง่ายดีหรือไม่?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/submit-assignment-response</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/submit-assignment-response" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 18: Student Case 13 - Participate in Discussion Forum -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">17. เคสผู้เรียน 13: กระดานสนทนาถามตอบ</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-PLY.05 - Participate in Discussion Forum</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>เปิดหน้าต่างบอร์ดสนทนาถามตอบภายในห้องวิชาเรียน</li>
+            <li>พิมพ์รายละเอียดและกดปุ่มสร้างกระทู้ใหม่ (New Thread)</li>
+            <li>ทดลองพิมพ์ข้อความแสดงความเห็นโต้ตอบในกระทู้ตัวอย่างผู้เรียนรายอื่น</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: บอร์ดสนทนาย่อยถูกปิดการใช้งานชั่วคราวสำหรับรุ่นเรียนนี้</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ผู้เรียนโพสต์แนบไฟล์ภาพ/เอกสารอ้างอิงประกอบในบอร์ดฟอรัม</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2B')"><b>AF-2B</b>: ผู้เรียนลบหรือแก้ไขข้อความโพสต์ของตนเองในภายหลัง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2C')"><b>AF-2C</b>: ไฟล์อัปโหลดในโพสต์เกิดความล้มเหลว ลบไฟล์ออกจากกล่องป้อน</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: กระทู้สนทนานี้ถูกล็อกโดยครูผู้แต่ง (เป็นโหมดอ่านอย่างเดียว)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: โพสต์ของผู้เรียนมีข้อมูลผิดกฎและถูกแจ้งสแปม/รายงานเนื้อหา</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">การพิมพ์ตอบคำถาม การใส่ป้ายกำกับ และการแยกแยะความคิดเห็นของเพื่อนร่วมคลาสสบายตาดีหรือไม่?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/participate-in-discussion-forum</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/participate-in-discussion-forum" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 19: Student Case 14 - Purchase Course -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">18. เคสผู้เรียน 14: ซื้อหลักสูตร</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-BIL.01 - Purchase Course</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>กดสมัครเรียนวิชาที่มีการคิดค่าบริการ (Paid Course)</li>
+            <li>เลือกสิทธิพิเศษ หรือวิธีการจ่ายเงินผ่านคิวอาร์โค้ดจำลองระบบ BCEL One</li>
+            <li>สแกนเพื่ออนุมัติสิทธิ์ และตรวจสอบสถานะปลดล็อกเนื้อหาเรียนโดยทันที</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: คอร์สวิชานี้ยังไม่ได้จัดทำรายการราคาสินค้า ปิดปุ่มสั่งซื้อชั่วคราว</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1B')"><b>AF-1B</b>: ผู้เรียนมีสิทธิ์คอร์สเรียนนี้อยู่แล้ว แสดงการส่งกลับไปหน้าหลัก</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ยกเลิกทำรายการสั่งซื้อระหว่างเตรียมการจ่ายเงินจำลอง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: จ่ายเงินล้มเหลว (บัญชีไม่มีเงินพอ หรือยอดตรวจสอบหมดเวลาจำลอง)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3C')"><b>AF-3C</b>: ผู้ใช้รับรู้สิทธิ์ลงเรียนเรียบร้อย ก่อนการเชื่อมโยงระบบยืนยันปลายทาง</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'cohost')"><b>cohost</b>: สมัครเรียนแบบกลุ่มวิชาร่วมสัญญาสถาบัน (ไม่ต้องชำระผ่านเว็บ)</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">การสแกนจ่ายคิวอาร์โค้ดจำลอง BCEL และการอัปเดตสถานะปลดล็อกเรียนมีความลื่นไหลเข้าใจง่ายดีไหม?</p>
             </div>
           </div>
         </div>
@@ -1450,12 +1965,249 @@
       </div>
     </div>
 
-    <!-- Slide 12: Instructor Case 1 - Author Course Content -->
+    <!-- Slide 20: Student Case 15 - Renew Subscription -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">19. เคสผู้เรียน 15: ต่ออายุสมาชิก</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-BIL.03 - Renew Subscription</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>เข้าไปตรวจสอบอายุสมาชิกเรียนรายเดือน/ปี ที่ปุ่มโปรไฟล์หน้าแรก</li>
+            <li>กดปุ่มต่ออายุสมาชิกแพ็กเกจ และสแกนชำระเงินยืนยันจำลอง</li>
+            <li>เช็คแถบสถานะการเพิ่มเวลาอายุสมาชิกชุดใหม่ย้อนหลัง</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: ผู้เรียนยังไม่เคยสมัครใช้สิทธิ์สมาชิกแพ็กเกจ (ไม่มีรายการต่ออายุ)</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ราคาสมาชิกเปลี่ยนไปในระหว่างกดทำรายการต่ออายุ ย้อนทบทวนข้อมูล</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: การตัดเงินหรืออนุมัติสิทธิ์ชำระล้มเหลว แสดงกล่องแจ้งเตือนภัยระบบ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-4A')"><b>AF-4A</b>: ต่อเวลาผ่านเกตเวย์แล้ว แต่บันทึกปลายทางดีเลย์ แสดงสถานะกำลังบันทึก</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">หน้ารายการอายุใช้งานที่เหลือและปุ่มต่ออายุ มองหาได้ง่ายและตอบรับการทำงานได้ดีเพียงใด?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/renew-subscription</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/renew-subscription" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 21: Student Case 16 - View Payment History -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">20. เคสผู้เรียน 16: ตรวจสอบประวัติจ่ายเงิน</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-BIL.04 - View Payment History</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>เปิดหน้าตั้งค่าการเงินและประวัติการจ่ายบิลย้อนหลัง</li>
+            <li>คลิกตรวจสอบใบเสร็จประวัติชำระค่าเรียน (View Receipt)</li>
+            <li>ทดลองตรวจสอบข้อมูลวันที่ ยอดเงิน และดาวน์โหลดใบกำกับสินค้าจำลอง</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: ผู้เรียนพึ่งลงทะเบียนเรียน และยังไม่เคยทำรายการจ่ายเงินใดๆ</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ใบสั่งจ่ายหรือประวัติชำระของแถวที่เลือกเกิดการขัดข้องทางเซิร์ฟเวอร์</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: ผู้เรียนยื่นคำขอเงินคืน (Refund) สำหรับคอร์สที่ซื้อผิดพลาด</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3B')"><b>AF-3B</b>: สิทธิ์คืนเงินได้รับการอนุมัติ สถานะเปลี่ยนเป็น 'คืนเงินแล้ว'</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">การจัดรายการใบเสร็จในตาราง และการพิมพ์รายงานสรุปยอดใช้งานได้ดีและเข้าใจง่ายไหม?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/view-payment-history</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/view-payment-history" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 22: Student Case 17 - View In-App Notification Inbox -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">21. เคสผู้เรียน 17: แจ้งเตือนในแอป</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-NOT.03 - View In-App Notification Inbox</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>กดที่ไอคอนรูปกระดิ่งบริเวณขวาบนของพอร์ทัลเพื่อเปิดอ่านข้อความ</li>
+            <li>อ่านรายละเอียดข้อความและเช็ควันที่ส่งรับในรายการอินบ็อกซ์</li>
+            <li>ทดลองคลิกปุ่มทำเครื่องหมายว่าอ่านแล้ว (Mark all as read) เพื่อจัดประเภทข้อความ</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: กล่องจดหมายการแจ้งเตือนว่างเปล่า ไม่มีรายการเตือนใหม่</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ระบบล้มเหลวขณะเปลี่ยนสถานะการแจ้งเตือน แสดงกล่องเตือนแดง</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ตำแหน่งไอคอนกระดิ่ง การเรียงลำดับเวลาเตือน และความเด่นชัดของจุดแดงเตือนใหม่เข้าใจง่ายดีไหม?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info/view-in-app-notification-inbox</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/view-in-app-notification-inbox" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 23: Student Case 18 - View Learner Self-Progress Dashboard -->
+    <div class="slide split-screen">
+      <div class="slide-left-pane">
+        <div class="slide-title-group">
+          <div class="slide-subtitle">Student / Learner (ผู้เรียน)</div>
+          <h2 class="slide-title">22. เคสผู้เรียน 18: แดชบอร์ดสรุปความคืบหน้า</h2>
+        </div>
+        <div class="card-glass" style="padding: 20px;">
+          <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-ANL.01 - View Learner Self-Progress Dashboard</h3>
+          <ul class="check-list" style="font-size:0.9rem; gap:12px; margin-bottom:15px;">
+            <li>กลับมาที่หน้าหลักของพอร์ทัลผู้เรียน (Landing Page / Dashboard)</li>
+            <li>สังเกตหน้าจอสรุปรายชื่อวิชาที่เรียนค้างอยู่ แถบเปอร์เซ็นต์รวม และสถิติส่วนตัว</li>
+            <li>ตรวจเช็คการแจ้งเตือนกำหนดส่งการบ้าน หรือตารางควิซวิชาเรียนประจำสัปดาห์</li>
+          </ul>
+          
+          <!-- Interactive Scenario Selector -->
+          <div class="scenario-selector-card">
+            <div class="scenario-selector-title">
+              <i class="bi bi-sliders"></i>
+              <span>จำลองสถานการณ์ (Simulate Scenarios):</span>
+            </div>
+            <div class="scenario-buttons">
+              <button class="btn-scenario active" onclick="changeIframeScenario(this, 'main')"><i class="bi bi-play-circle-fill"></i> <b>main</b>: Happy Path / Main Flow</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-1A')"><b>AF-1A</b>: เข้าล็อกอินครั้งแรก ระบบจะแสดงป๊อปอัพสอนใช้งานสกรีนโดยละเอียด</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-2A')"><b>AF-2A</b>: ยังไม่มีวิชาเรียนที่ลงไว้ แสดงแบนเนอร์ชวนเข้าไปดูแคตตาล็อกหลักสูตร</button>
+              <button class="btn-scenario" onclick="changeIframeScenario(this, 'AF-3A')"><b>AF-3A</b>: แสดงกล่องเตือนดีดไลน์ใบงานที่ใกล้หมดเวลาส่งเร่งด่วน</button>
+              <button class="btn-scenario btn-scenario-reload" onclick="reloadIframe(this)" title="Reload scenario" style="color: var(--color-accent); border-color: var(--color-accent); font-weight: 600;">
+                <i class="bi bi-arrow-clockwise"></i> รีโหลดหน้าจอ (Reload)
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-box alert-box-info" style="padding: 12px; gap: 10px;">
+            <span class="alert-icon" style="font-size:1.1rem;"><i class="bi bi-lightbulb-fill"></i></span>
+            <div class="alert-content">
+              <h4 style="font-size:0.95rem;">จุดสังเกตเพื่อส่งความคิดเห็น (Feedback)</h4>
+              <p style="font-size:0.8rem; line-height: 1.4;">ภาพรวมและกราฟแสดงผลสถิติ My Courses มีความสวยงาม อ่านค่าง่าย และใช้สรุปผลดีพอไหม?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-right-pane">
+        <div class="device-mockup browser">
+          <div class="device-header">
+            <div class="device-dot-group">
+              <span class="device-dot red"></span><span class="device-dot yellow"></span><span class="device-dot green"></span>
+            </div>
+            <div class="device-address">https://learner-portal.tvete-learning.info</div>
+            <button class="device-refresh-btn" onclick="reloadIframe(this)" title="Reload page">
+              <i class="bi bi-arrow-clockwise"></i>
+            </button>
+          </div>
+          <div class="device-body">
+            <iframe data-src-path="/" data-role="learner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Slide 24: Instructor Case 1 - Author Course Content -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Instructor (ผู้สอน)</div>
-          <h2 class="slide-title">11. เคสที่ 1: สร้างบทเรียนและหลักสูตร</h2>
+          <h2 class="slide-title">23. เคสที่ 1: สร้างบทเรียนและหลักสูตร</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.01 - Author Course Content</h3>
@@ -1513,12 +2265,12 @@
       </div>
     </div>
 
-    <!-- Slide 13: Instructor Case 2 - Build Quiz -->
+    <!-- Slide 25: Instructor Case 2 - Build Quiz -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Instructor (ผู้สอน)</div>
-          <h2 class="slide-title">12. เคสที่ 2: สร้างแบบทดสอบควิซ</h2>
+          <h2 class="slide-title">24. เคสที่ 2: สร้างแบบทดสอบควิซ</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.02 - Build Quiz</h3>
@@ -1578,12 +2330,12 @@
       </div>
     </div>
 
-    <!-- Slide 14: Instructor Case 3 - Submit Course for Publish -->
+    <!-- Slide 26: Instructor Case 3 - Submit Course for Publish -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Instructor (ผู้สอน)</div>
-          <h2 class="slide-title">13. เคสที่ 3: ยื่นขออนุมัติเผยแพร่หลักสูตร</h2>
+          <h2 class="slide-title">25. เคสที่ 3: ยื่นขออนุมัติเผยแพร่หลักสูตร</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.05 - Submit Course for Publish</h3>
@@ -1636,12 +2388,12 @@
       </div>
     </div>
 
-    <!-- Slide 15: Instructor Case 4 - Cohort Dashboard -->
+    <!-- Slide 27: Instructor Case 4 - Cohort Dashboard -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Instructor (ผู้สอน)</div>
-          <h2 class="slide-title">14. เคสที่ 4: แดชบอร์ดติดตามผู้เรียน</h2>
+          <h2 class="slide-title">26. เคสที่ 4: แดชบอร์ดติดตามผู้เรียน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.13 - Cohort Dashboard</h3>
@@ -1696,12 +2448,12 @@
       </div>
     </div>
 
-    <!-- Slide 16: Instructor Case 5 - Manage Assignment -->
+    <!-- Slide 28: Instructor Case 5 - Manage Assignment -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Instructor (ผู้สอน)</div>
-          <h2 class="slide-title">15. เคสที่ 5: ตรวจและประเมินงานการบ้าน</h2>
+          <h2 class="slide-title">27. เคสที่ 5: ตรวจและประเมินงานการบ้าน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.05 - Manage Assignment</h3>
@@ -1757,12 +2509,12 @@
       </div>
     </div>
 
-    <!-- Slide 17: Instructor Case 6 - Manage Cohort -->
+    <!-- Slide 29: Instructor Case 6 - Manage Cohort -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Instructor (ผู้สอน)</div>
-          <h2 class="slide-title">16. เคสที่ 6: จัดการกลุ่มชั้นเรียน Cohorts</h2>
+          <h2 class="slide-title">28. เคสที่ 6: จัดการกลุ่มชั้นเรียน Cohorts</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.04 - Manage Cohort</h3>
@@ -1817,12 +2569,12 @@
       </div>
     </div>
 
-        <!-- Slide 18: Program Admin Case 1 - Bulk Import Learners -->
+        <!-- Slide 30: Program Admin Case 1 - Bulk Import Learners -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Program Admin (แอดมินสถาบัน)</div>
-          <h2 class="slide-title">17. เคสที่ 1: นำเข้าไฟล์ Excel รายชื่อนักเรียน</h2>
+          <h2 class="slide-title">29. เคสที่ 1: นำเข้าไฟล์ Excel รายชื่อนักเรียน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.06 - Bulk Import Learners</h3>
@@ -1877,12 +2629,12 @@
       </div>
     </div>
 
-    <!-- Slide 19: Program Admin Case 2 - Provision Staff Account -->
+    <!-- Slide 31: Program Admin Case 2 - Provision Staff Account -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Program Admin (แอดมินสถาบัน)</div>
-          <h2 class="slide-title">18. เคสที่ 2: เชิญบัญชีครูผู้สอนร่วมสถาบัน</h2>
+          <h2 class="slide-title">30. เคสที่ 2: เชิญบัญชีครูผู้สอนร่วมสถาบัน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.04 - Provision Staff Account</h3>
@@ -1937,12 +2689,12 @@
       </div>
     </div>
 
-    <!-- Slide 20: Program Admin Case 3 - Review and Approve Course -->
+    <!-- Slide 32: Program Admin Case 3 - Review and Approve Course -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Program Admin (แอดมินสถาบัน)</div>
-          <h2 class="slide-title">19. เคสที่ 3: ตรวจสอบและอนุมัติหลักสูตร</h2>
+          <h2 class="slide-title">31. เคสที่ 3: ตรวจสอบและอนุมัติหลักสูตร</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-CCM.06 - Review and Approve Course</h3>
@@ -1996,12 +2748,12 @@
       </div>
     </div>
 
-    <!-- Slide 21: Program Admin Case 4 - Manage Course -->
+    <!-- Slide 33: Program Admin Case 4 - Manage Course -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Program Admin (แอดมินสถาบัน)</div>
-          <h2 class="slide-title">20. เคสที่ 4: ตั้งราคาและประเภทคอร์ส</h2>
+          <h2 class="slide-title">32. เคสที่ 4: ตั้งราคาและประเภทคอร์ส</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-LMS.11 - Manage Course</h3>
@@ -2055,12 +2807,12 @@
       </div>
     </div>
 
-    <!-- Slide 22: Program Admin Case 5 - Export Finance Transactions -->
+    <!-- Slide 34: Program Admin Case 5 - Export Finance Transactions -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Program Admin (แอดมินสถาบัน)</div>
-          <h2 class="slide-title">21. เคสที่ 5: ส่งออกรายงานธุรกรรมการเงิน</h2>
+          <h2 class="slide-title">33. เคสที่ 5: ส่งออกรายงานธุรกรรมการเงิน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-BIL.05 - Export Finance Transactions</h3>
@@ -2112,12 +2864,12 @@
       </div>
     </div>
 
-    <!-- Slide 23: Program Admin Case 6 - View Institution-level Aggregated Report -->
+    <!-- Slide 35: Program Admin Case 6 - View Institution-level Aggregated Report -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Program Admin (แอดมินสถาบัน)</div>
-          <h2 class="slide-title">22. เคสที่ 6: สรุปรายงานวิเคราะห์ระดับสถาบัน</h2>
+          <h2 class="slide-title">34. เคสที่ 6: สรุปรายงานวิเคราะห์ระดับสถาบัน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-ANL.06 - View Institution-level Aggregated Report</h3>
@@ -2172,12 +2924,12 @@
       </div>
     </div>
 
-        <!-- Slide 24: Super Admin Case 1 - Manage System Configuration -->
+        <!-- Slide 36: Super Admin Case 1 - Manage System Configuration -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Super Admin (แอดมินระบบสูงสุด)</div>
-          <h2 class="slide-title">23. เคสที่ 1: ตั้งค่าระบบหลักแพลตฟอร์ม</h2>
+          <h2 class="slide-title">35. เคสที่ 1: ตั้งค่าระบบหลักแพลตฟอร์ม</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-ADM.01 - Manage System Configuration</h3>
@@ -2230,12 +2982,12 @@
       </div>
     </div>
 
-    <!-- Slide 25: Super Admin Case 2 - Manage Staff Profile -->
+    <!-- Slide 37: Super Admin Case 2 - Manage Staff Profile -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Super Admin (แอดมินระบบสูงสุด)</div>
-          <h2 class="slide-title">24. เคสที่ 2: จัดการบัญชีแอดมินสถาบัน</h2>
+          <h2 class="slide-title">36. เคสที่ 2: จัดการบัญชีแอดมินสถาบัน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.14 - Manage Staff Profile</h3>
@@ -2291,12 +3043,12 @@
       </div>
     </div>
 
-    <!-- Slide 26: Super Admin Case 3 - View Security & Access Audit Log -->
+    <!-- Slide 38: Super Admin Case 3 - View Security & Access Audit Log -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Super Admin (แอดมินระบบสูงสุด)</div>
-          <h2 class="slide-title">25. เคสที่ 3: ตรวจสอบบันทึกความปลอดภัย</h2>
+          <h2 class="slide-title">37. เคสที่ 3: ตรวจสอบบันทึกความปลอดภัย</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.21 - View Security & Access Audit Log</h3>
@@ -2332,12 +3084,12 @@
       </div>
     </div>
 
-    <!-- Slide 27: Super Admin Case 4 - View Notification Delivery Log -->
+    <!-- Slide 39: Super Admin Case 4 - View Notification Delivery Log -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Super Admin (แอดมินระบบสูงสุด)</div>
-          <h2 class="slide-title">26. เคสที่ 4: ตรวจสอบรายงานแจ้งเตือนระบบ</h2>
+          <h2 class="slide-title">38. เคสที่ 4: ตรวจสอบรายงานแจ้งเตือนระบบ</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-NOT.01 - View Notification Delivery Log</h3>
@@ -2389,12 +3141,12 @@
       </div>
     </div>
 
-    <!-- Slide 28: Super Admin Case 5 - Manage Institute -->
+    <!-- Slide 40: Super Admin Case 5 - Manage Institute -->
     <div class="slide split-screen">
       <div class="slide-left-pane">
         <div class="slide-title-group">
           <div class="slide-subtitle">Super Admin (แอดมินระบบสูงสุด)</div>
-          <h2 class="slide-title">27. เคสที่ 5: จัดการวิทยาลัยและสถาบัน</h2>
+          <h2 class="slide-title">39. เคสที่ 5: จัดการวิทยาลัยและสถาบัน</h2>
         </div>
         <div class="card-glass" style="padding: 20px;">
           <h3 style="font-family:var(--font-title); margin-bottom:10px; font-size:1.1rem; color:var(--color-primary);">Use Case: UC-IDP.23 - Manage Institute</h3>
@@ -2451,11 +3203,11 @@
       </div>
     </div>
 
-    <!-- Slide 29: Submission / Wrap-Up -->
+    <!-- Slide 41: Submission / Wrap-Up -->
     <div class="slide">
       <div class="slide-title-group">
         <div class="slide-subtitle">Prototype Wrap-up</div>
-        <h2 class="slide-title">29. ขั้นตอนสุดท้ายการบันทึกผลการทดสอบ</h2>
+        <h2 class="slide-title">41. ขั้นตอนสุดท้ายการบันทึกผลการทดสอบ</h2>
       </div>
       <div class="grid-2col">
         <div class="card-glass">
@@ -2477,11 +3229,11 @@
         </div>
       </div>
     </div>
-    <!-- Slide 30: Thank You & Next Steps -->
+    <!-- Slide 42: Thank You & Next Steps -->
     <div class="slide">
       <div class="slide-title-group">
         <div class="slide-subtitle">Wrap-up & Next Steps</div>
-        <h2 class="slide-title">30. เสร็จสิ้นการรีวิวระบบต้นแบบ & ขั้นตอนถัดไป</h2>
+        <h2 class="slide-title">42. เสร็จสิ้นการรีวิวระบบต้นแบบ & ขั้นตอนถัดไป</h2>
       </div>
       <div class="grid-2col">
         <div class="card-glass">
